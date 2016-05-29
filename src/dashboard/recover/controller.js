@@ -2,13 +2,12 @@
 
 
 export default class LoginCtrl {
-    constructor($modalInstance, auth, $rootScope, $state, registration, recover) {
+    constructor($modalInstance, auth, $rootScope, $state, registration) {
         this.modalInstance = $modalInstance;
         this.auth = auth;
         this.rootscope = $rootScope;
         this.state = $state;
         this.registration = registration;
-        this.recover = recover;
     }
 
     close() {
@@ -41,8 +40,8 @@ export default class LoginCtrl {
         this.registration.open();
     }
 
-    openRecoverPopup() {
+    recoverPassword() {
         this.close();
-        this.recover.open();
+        this.state.go('dashboard.recover-password');
     }
 }

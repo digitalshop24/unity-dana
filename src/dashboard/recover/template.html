@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <button type="button" ng-click="ctrl.close()" class="close"  aria-hidden="true">&times;</button>
+    <h2 class="modal-title text-center" id="myModalLabel">Восстановление пароля</h2>
+</div>
+<div class="modal-body">
+    <form name="recoveryForm" class="authorizationForm recovery" ng-submit="ctrl.send()" ng-init="ctrl.form = {}">
+        <h4>Введите электронную почту <br/> указанную при регистрации</h4>
+        <input type="email" ng-model="ctrl.form.email" placeholder="Электронная почта" />
+        <button type="submit" class="mainBtn">Отправить</button>
+    </form>
+</div>
