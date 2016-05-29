@@ -2,11 +2,12 @@
 
 
 export default class LoginCtrl {
-    constructor($modalInstance, auth, $rootScope, $state) {
+    constructor($modalInstance, auth, $rootScope, $state, registration) {
         this.modalInstance = $modalInstance;
         this.auth = auth;
         this.rootscope = $rootScope;
         this.state = $state;
+        this.registration = registration;
     }
 
     close() {
@@ -23,8 +24,7 @@ export default class LoginCtrl {
             }).catch((err) => {
                 $('#password').css('border-color', 'red');
                 this.form.password = undefined;
-                this.rootscope.alreadyInLoginModal = false;
-                this.message = err.message || "Произошла ошибка авторизации";
+                this.errorText = err.message || "Произошла ошибка авторизации";
             });
     }
 
@@ -35,9 +35,9 @@ export default class LoginCtrl {
     }
 
 
-    goToRegistration() {
+    openRegistrationPopup() {
         this.close();
-        this.state.go('dashboard.registration');
+        this.registration.open();
     }
 
     recoverPassword() {

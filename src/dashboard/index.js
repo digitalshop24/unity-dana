@@ -5,6 +5,7 @@ import angular from 'angular';
 import HeaderCtrl from './header/controller.js';
 import GoodsService from './goodsService.js';
 import Login from './login/index';
+import Registration from './registration/index';
 import main from './main/index.js';
 import card from './card/index.js';
 import monthNewGoods from './month-new/index.js';
@@ -20,6 +21,7 @@ export default angular.module('dashboard',
     ])
     .service('goodsService', GoodsService)
     .service('login', Login)
+    .service('registration', Registration)
     /*
     .service('modal', Modal)
     .service('modalSpeed', ModalSpeed)

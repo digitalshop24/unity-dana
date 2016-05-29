@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <button type="button" ng-click="ctrl.close()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h2 class="modal-title text-center" id="myModalLabel">Регистрация</h2>
+</div>
+<div class="modal-body">
+    <form name="authorizationForm" ng-submit="ctrl.send()" class="authorizationForm" ng-init="ctrl.form = {}">
+        <input type="email" ng-model="ctrl.form.email" placeholder="Электронная почта" required/>
+        <input type="password" minlength="8" ng-model="ctrl.form.password" placeholder="Пароль" required/>
+        <input type="password" minlength="8" ng-model="ctrl.form.passwordConfirmation" placeholder="Подтверждение пароля" required/>
+        <!--<ul>
+            <li> Введите текст с картинки
+                  <span>
+                    <a href="">
+                        <img src="img/rotate.png" />
+                    </a>
+                  </span>
+            </li>
+            <li>
+                <span><input type="text" /></span>
+                <span><img src="img/capcha.png" name="Капча" alt="Капча" /></span>
+            </li>
+        </ul>-->
+        <p ng-bind="ctrl.errorText"></p>
+        <button type="submit" class="mainBtn">Зарегистрироваться</button>
+    </form>
+</div>

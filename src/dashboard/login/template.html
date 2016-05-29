@@ -6,10 +6,11 @@
     <form ng-submit="ctrl.send()" name="signIn" class="authorizationForm signIn" ng-init="ctrl.form = {}">
         <input type="email" ng-model="ctrl.form.email" placeholder="Электронная почта" />
         <input type="password" ng-model="ctrl.form.password" placeholder="Пароль" />
-        <button type="button" class="mainBtn">Войти</button>
+        <button type="submit" class="mainBtn">Войти</button>
+        <p ng-bind="ctrl.errorText"></p>
     </form>
 </div>
 <div class="modal-footer">
-    <a href="" data-dismiss="modal" data-toggle="modal" data-target="#authorizationModal">Зарегистрироваться</a>
+    <a href="" ng-click="ctrl.openRegistrationPopup()">Зарегистрироваться</a>
     <a href="" data-dismiss="modal" data-toggle="modal" data-target="#recoveryPasModal">Забыли пароль?</a>
 </div>
