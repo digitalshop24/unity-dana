@@ -1,7 +1,7 @@
 <div class="contentWraper container cataloguePage detail">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h1>Каталог / <span>Какая-то определенная тематика</span></h1>
+            <h1>Каталог / <span ng-bind="::ctrl.item.theme">Какая-то определенная тематика</span></h1>
         </div>
     </div>
 
@@ -33,10 +33,10 @@
                 фонд российских учебников")</strong></p>
 
             <p> Под ред. Н.Ш. Кремера <br/>
-                Изд-во ЮНИТИ, 2014 <br/>
+                {{::ctrl.item.publisher_name}} <br/>
                 ISBN {{::ctrl.item.isbn}} <br/>
-                479 стр., 10000 экз. <br/>
-                60x90/16
+                {{::ctrl.item.pages_amount}} стр., {{::ctrl.item.printed_amount}} экз. <br/>
+                {{::ctrl.item.height}}x{{::ctrl.item.width}}/{{::ctrl.item.length}}
             </p>
 
             <p ng-bind-html="ctrl.item.content">
