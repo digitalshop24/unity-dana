@@ -9,6 +9,7 @@ import Registration from './registration/index';
 import Recover from './recover/index';
 import main from './main/index.js';
 import card from './card/index.js';
+import profile from './profile/index.js';
 import monthNewGoods from './month-new/index.js';
 
 
@@ -18,6 +19,7 @@ export default angular.module('dashboard',
     [
         main.name,
         card.name,
+        profile.name,
         monthNewGoods.name
     ])
     .service('goodsService', GoodsService)
