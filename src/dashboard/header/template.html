@@ -2,7 +2,7 @@
     <div class="navbar registration">
         <div class="container">
             <ul class="authorization navbar-right">
-                <li><a href="" data-toggle="modal" data-target="#signIn">Вход</a></li>
+                <li><a href="" ng-click="ctrl.openLoginPopup()">Вход</a></li>
                 <li><a href="">Контакты</a></li>
                 <li class="cartWrap"><a href=""><img src="img/resources/img/cart.png" class="cart" alt="cart" name="cart"/> 99 товаров
                     <strong>99 999</strong><i class="fa fa-rub"></i></a></li>
@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href=""><img src="img/resources/img/logo.png" alt="unity-dana" name="unity-dana"/></a>
+                <a class="navbar-brand" ui-sref="dashboard.main"><img src="img/resources/img/logo.png" alt="unity-dana" name="unity-dana"/></a>
 
             </div>
             <div id="navbar" class="navbar-collapse halfNav vv collapse">

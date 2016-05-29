@@ -1,0 +1,15 @@
+<div class="modal-header text-center">
+    <button type="button" ng-click="ctrl.close()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <img src="img/resources/img/logo2.png" name="logo" alt="unity-dana">
+</div>
+<div class="modal-body">
+    <form ng-submit="ctrl.send()" name="signIn" class="authorizationForm signIn" ng-init="ctrl.form = {}">
+        <input type="email" ng-model="ctrl.form.email" placeholder="Электронная почта" />
+        <input type="password" ng-model="ctrl.form.password" placeholder="Пароль" />
+        <button type="button" class="mainBtn">Войти</button>
+    </form>
+</div>
+<div class="modal-footer">
+    <a href="" data-dismiss="modal" data-toggle="modal" data-target="#authorizationModal">Зарегистрироваться</a>
+    <a href="" data-dismiss="modal" data-toggle="modal" data-target="#recoveryPasModal">Забыли пароль?</a>
+</div>

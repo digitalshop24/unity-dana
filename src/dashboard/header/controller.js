@@ -1,7 +1,12 @@
 'use strict';
 
 export default class HeaderCtrl {
-    constructor() {
+    constructor(login) {
+        this.loginService = login;
 
+    }
+
+    openLoginPopup() {
+        this.loginService.open();
     }
 }
