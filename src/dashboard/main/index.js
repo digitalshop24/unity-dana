@@ -15,7 +15,9 @@ export default angular.module('dashboard.main', [
                 controller: MainCtrl,
                 controllerAs: 'ctrl',
                 resolve: {
-
+                    hits: goodsService => {
+                        return goodsService.getHits();
+                    }
                 }
             });
     });

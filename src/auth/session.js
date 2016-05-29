@@ -3,9 +3,9 @@
 const TOKEN_NAME = 'project-prefix-auth-token';
 
 export default class Session {
-    constructor($cookies, skodaLocalStorage) {
+    constructor($cookies, localStorage) {
         this.cookies = $cookies;
-        this.localStorage = skodaLocalStorage;
+        this.localStorage = localStorage;
     }
 
     cleanupCookies() {

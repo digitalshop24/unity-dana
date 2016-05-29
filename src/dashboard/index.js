@@ -3,6 +3,7 @@
 import angular from 'angular';
 
 import HeaderCtrl from './header/controller.js';
+import GoodsService from './goodsService.js'
 import main from './main/index.js'
 
 
@@ -11,6 +12,7 @@ export default angular.module('dashboard',
     [
         main.name
     ])
+    .service('goodsService', GoodsService)
     /*.service('login', Login)
     .service('modal', Modal)
     .service('modalSpeed', ModalSpeed)

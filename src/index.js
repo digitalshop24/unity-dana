@@ -24,4 +24,17 @@ export default angular.module('app',
     .service('auth', auth)
     .config(($locationProvider) => {
         $locationProvider.html5Mode(true);
+    })
+    .run(($rootScope) => {
+
+
+        /*$rootScope.$on('$stateChangeStart', () => {
+            NProgress.start();
+        });
+        $rootScope.$on('$stateChangeSuccess', () => {
+            NProgress.done();
+        });*/
+        $rootScope.$on('$stateChangeError', (err) => {
+            console.log("Error !" + err);
+        });
     });
