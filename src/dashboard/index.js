@@ -11,6 +11,7 @@ import main from './main/index.js';
 import card from './card/index.js';
 import profile from './profile/index.js';
 import catalog from './catalog/index.js';
+import price from './price/index.js';
 import monthNewGoods from './month-new/index.js';
 
 
@@ -22,6 +23,7 @@ export default angular.module('dashboard',
         card.name,
         profile.name,
         catalog.name,
+        price.name,
         monthNewGoods.name
     ])
     .service('goodsService', GoodsService)
