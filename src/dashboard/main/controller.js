@@ -2,7 +2,8 @@
 
 
 export default class MainCtrl {
-    constructor(hits) {
+    constructor(hits, newGoods) {
         this.hits = hits;
+        this.newGoods = newGoods;
     }
 }

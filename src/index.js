@@ -26,6 +26,9 @@ export default angular.module('app',
     .config(($locationProvider) => {
         $locationProvider.html5Mode(true);
     })
+    .run(($rootScope, $state) => {
+        $rootScope.$state = $state;
+    })
     .run(($rootScope) => {
 
 

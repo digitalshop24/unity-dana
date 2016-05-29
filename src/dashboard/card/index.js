@@ -15,6 +15,10 @@ export default angular.module('dashboard.card', [
                 resolve: {
                     item: (goodsService, $stateParams) => {
                         return goodsService.getById($stateParams.id);
+                    },
+
+                    newGoods: goodsService => {
+                        return goodsService.getNewGoods();
                     }
                 }
             });

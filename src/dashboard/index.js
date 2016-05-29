@@ -6,6 +6,7 @@ import HeaderCtrl from './header/controller.js';
 import GoodsService from './goodsService.js';
 import main from './main/index.js';
 import card from './card/index.js';
+import monthNewGoods from './month-new/index.js';
 
 
 
@@ -13,7 +14,8 @@ import card from './card/index.js';
 export default angular.module('dashboard',
     [
         main.name,
-        card.name
+        card.name,
+        monthNewGoods.name
     ])
     .service('goodsService', GoodsService)
     /*.service('login', Login)

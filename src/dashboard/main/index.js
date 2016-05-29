@@ -17,6 +17,10 @@ export default angular.module('dashboard.main', [
                 resolve: {
                     hits: goodsService => {
                         return goodsService.getHits();
+                    },
+
+                    newGoods: goodsService => {
+                        return goodsService.getNewGoods();
                     }
                 }
             });

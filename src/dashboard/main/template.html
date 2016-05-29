@@ -3,7 +3,7 @@
         <div class="col-sm-12 col-md-12 main">
             <div class="bookCarousel">
                 <slick slides-to-show="7" autoplay="true" center-padding="60px">
-                    <div class="item" style="background-image:url('img/resources/img/books/1.png');" ng-repeat="hit in ctrl.hits"></div>
+                    <div class="item" ng-click="$state.go('dashboard.card', {id: hit.id})" style="background-image:url('hit.image_url');" ng-repeat="hit in ctrl.hits"></div>
                 </slick>
             </div>
         </div>
@@ -88,7 +88,10 @@
     </div>
 </div>
 
-<div class="container">
+
+<div month-new-goods="ctrl.newGoods"></div>
+
+<!--<div class="container">
     <div class="row">
         <div class="col-md-12 text-center">
             <hr/>
@@ -212,7 +215,7 @@
             </figure>
         </div>
     </div>
-</div>
+</div>-->
 <section class="MailSec">
     <div class="container">
         <div class="row">

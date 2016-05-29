@@ -27,4 +27,10 @@ export default class GoodsService {
             return res.data;
         })
     }
+
+    getNewGoods() {
+        return this.api.get('/goods/new').then((res) => {
+            return res.data;
+        })
+    }
 }
