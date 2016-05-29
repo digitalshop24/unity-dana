@@ -1,106 +1,26 @@
-<div class="contentWraper container">
-    <div class="row">
-        <div class="col-sm-12 col-md-12 main">
-            <div class="bookCarousel">
-                <slick slides-to-show="7" autoplay="true" center-padding="60px">
-                    <div class="item" ng-click="$state.go('dashboard.card', {id: hit.id})" style="background-image:url('{{hit.image_url}}');" ng-repeat="hit in ctrl.hits"></div>
-                </slick>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 main">
-            <div class="typeCarousel text-center">
-                <slick slides-to-show="7" autoplay="true" center-padding="60px">
-                    <div class="item">
-                        <figure>
-                            <a href="template/news.html">
-                                <div class="iconWrap">
-                                    <img src="img/resources/img/categories/1.png" title="Новости" alt="icon"/>
-                                </div>
-                                <figcaption>Новости</figcaption>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="item">
-                        <figure>
-                            <a ui-sref="dashboard.catalog">
-                                <div class="iconWrap">
-                                    <img src="img/resources/img/categories/2.png" title="Каталог" alt="icon"/>
-                                </div>
-                                <figcaption>Каталог</figcaption>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="item">
-                        <figure>
-                            <a href="">
-                                <div class="iconWrap">
-                                    <img src="img/resources/img/categories/3.png" title="Журналы" alt="icon"/>
-                                </div>
-                                <figcaption>Журналы</figcaption>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="item">
-                        <figure>
-                            <a href="">
-                                <div class="iconWrap">
-                                    <img src="img/resources/img/categories/4.png" title="Студентам" alt="icon"/>
-                                </div>
-                                <figcaption>Студентам</figcaption>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="item">
-                        <figure>
-                            <a href="">
-                                <div class="iconWrap">
-                                    <img src="img/resources/img/categories/5.png" title="Авторам" alt="icon"/>
-                                </div>
-                                <figcaption>Авторам</figcaption>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="item">
-                        <figure>
-                            <a href="">
-                                <div class="iconWrap">
-                                    <img src="img/resources/img/categories/6.png" title="Прайс" alt="icon"/>
-                                </div>
-                                <figcaption>Прайс</figcaption>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="item">
-                        <figure>
-                            <a href="">
-                                <div class="iconWrap">
-                                    <img src="img/resources/img/categories/7.png" title="Контакты" alt="icon"/>
-                                </div>
-                                <figcaption>Контакты</figcaption>
-                            </a>
-                        </figure>
-                    </div>
-                </slick>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div month-new-goods="ctrl.newGoods"></div>
-
-<!--<div class="container">
+<div class="contentWraper container cataloguePage">
     <div class="row">
         <div class="col-md-12 text-center">
+            <h1>Каталог / <span>Какая-то определенная тематика</span></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mixing">
+                <p>Сортировать:</p>
+                <ul>
+
+                    <li class="active">по популярности</li>
+                    <li>по цене</li>
+                    <li>по новизне</li>
+                </ul>
+            </div>
             <hr/>
-            <h1>Новинки месяца</h1>
         </div>
     </div>
 </div>
-
-<div class="container">
+<div class="container airBottom">
     <div class="row">
         <div class="col-xs-6 col-sm-4 col-md-3">
             <figure class="newProduct">
@@ -141,7 +61,7 @@
                         <p class="text-center"><strong>price</strong></p>
                     </figcaption>
                 </a>
-                <button class="mainBtn active">В корзине</button>
+                <button class="mainBtn">Купить</button>
             </figure>
         </div>
         <div class="col-xs-6 col-sm-4 col-md-3">
@@ -215,31 +135,12 @@
             </figure>
         </div>
     </div>
-</div>-->
-<section class="MailSec">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">Подписаться на рассылку</h1>
-
-                <div class="formWrap">
-                    <ul>
-                        <li>
-                            <input type="checkbox" checked="checked" id="c1" name="cc"/>
-                            <label for="c1"><span></span>Новинки месяца</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" checked="checked" id="c2" name="cc"/>
-                            <label for="c2"><span></span>Прайс лист (MS Excel)</label>
-                        </li>
-                        <li>
-                            <input type="text" placeholder="Логин" class="text"/>
-                        </li>
-                    </ul>
-                    <button class="grayBtn">Подписаться</button>
-                </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="LoadMoreBtns">
+                <button>Загрузить ещё</button>
+                <a href="#" class="mainBtn">Вернуться наверх</a>
             </div>
         </div>
     </div>
-</section>
-
+</div>
