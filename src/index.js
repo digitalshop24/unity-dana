@@ -6,6 +6,8 @@ import Api from './api';
 import session from './auth/session';
 import auth from './auth/auth';
 import localStorage from './auth/localstorage/index';
+import dashboard from './dashboard/index';
+
 
 
 export default angular.module('app',
@@ -13,7 +15,9 @@ export default angular.module('app',
         'ui.router',
         'ui.bootstrap',
         'ngCookies',
-        localStorage.name
+        'slick',
+        localStorage.name,
+        dashboard.name
     ])
     .service('api', Api)
     .service('session', session)
