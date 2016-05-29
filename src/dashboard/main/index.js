@@ -20,7 +20,7 @@ export default angular.module('dashboard.main', [
                     },
 
                     newGoods: goodsService => {
-                        return goodsService.getNewGoods();
+                        return goodsService.getMainGoods();
                     }
                 }
             });

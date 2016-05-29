@@ -33,4 +33,10 @@ export default class GoodsService {
             return res.data;
         })
     }
+
+    getMainGoods() {
+        return this.api.get('/goods/main').then((res) => {
+            return res.data;
+        })
+    }
 }

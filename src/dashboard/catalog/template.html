@@ -1,7 +1,7 @@
 <div class="contentWraper container cataloguePage">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h1>Каталог / <span>Какая-то определенная тематика</span></h1>
+            <h1 name="top">Каталог</h1>
         </div>
     </div>
 
@@ -22,113 +22,16 @@
 </div>
 <div class="container airBottom">
     <div class="row">
-        <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in ctrl.items">
             <figure class="newProduct">
                 <a href="">
-                    <div class="bgWrap" style="background-image: url('img/resources/img/just.png');"></div>
+                    <div class="bgWrap" style="background-image: url('{{item.image_url}}');"></div>
                     <figcaption>
-                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
+                        <p ng-bind="::item.name">Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник.
+                            Гриф МО РФ. (Серия
                             "Золотой фонд российских учебников")</p>
 
-                        <p class="text-center"><strong>price</strong></p>
-                    </figcaption>
-                </a>
-                <button class="mainBtn">Купить</button>
-            </figure>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <figure class="newProduct">
-                <a href="">
-                    <div class="bgWrap" style="background-image: url('img/resources/img/just.png');"></div>
-                    <figcaption>
-                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")</p>
-
-                        <p class="text-center"><strong>price</strong></p>
-                    </figcaption>
-                </a>
-                <button class="mainBtn">Купить</button>
-            </figure>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <figure class="newProduct">
-                <a href="">
-                    <div class="bgWrap" style="background-image: url('img/resources/img/just.png');"></div>
-                    <figcaption>
-                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")</p>
-
-                        <p class="text-center"><strong>price</strong></p>
-                    </figcaption>
-                </a>
-                <button class="mainBtn">Купить</button>
-            </figure>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <figure class="newProduct">
-                <a href="">
-                    <div class="bgWrap" style="background-image: url('img/resources/img/just.png');"></div>
-                    <figcaption>
-                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")</p>
-
-                        <p class="text-center"><strong>price</strong></p>
-                    </figcaption>
-                </a>
-                <button class="mainBtn">Купить</button>
-            </figure>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <figure class="newProduct">
-                <a href="">
-                    <div class="bgWrap" style="background-image: url('img/resources/img/just.png');"></div>
-                    <figcaption>
-                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")</p>
-
-                        <p class="text-center"><strong>price</strong></p>
-                    </figcaption>
-                </a>
-                <button class="mainBtn">Купить</button>
-            </figure>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <figure class="newProduct">
-                <a href="">
-                    <div class="bgWrap" style="background-image: url('img/resources/img/just.png');"></div>
-                    <figcaption>
-                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")</p>
-
-                        <p class="text-center"><strong>price</strong></p>
-                    </figcaption>
-                </a>
-                <button class="mainBtn">Купить</button>
-            </figure>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <figure class="newProduct">
-                <a href="">
-                    <div class="bgWrap" style="background-image: url('img/resources/img/just.png');"></div>
-                    <figcaption>
-                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")</p>
-
-                        <p class="text-center"><strong>price</strong></p>
-                    </figcaption>
-                </a>
-                <button class="mainBtn">Купить</button>
-            </figure>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <figure class="newProduct">
-                <a href="">
-                    <div class="bgWrap" style="background-image: url('img/resources/img/just.png');"></div>
-                    <figcaption>
-                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")</p>
-
-                        <p class="text-center"><strong>price</strong></p>
+                        <p class="text-center"><strong>{{::item.price}} руб.</strong></p>
                     </figcaption>
                 </a>
                 <button class="mainBtn">Купить</button>
@@ -138,8 +41,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="LoadMoreBtns">
-                <button>Загрузить ещё</button>
-                <a href="#" class="mainBtn">Вернуться наверх</a>
+                <button ng-click="ctrl.loadMore()">Загрузить ещё</button>
+                <a href="#top" class="mainBtn">Вернуться наверх</a>
             </div>
         </div>
     </div>
