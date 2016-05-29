@@ -15,6 +15,7 @@ export default angular.module('app',
         'ui.router',
         'ui.bootstrap',
         'ngCookies',
+        'ngSanitize',
         'slick',
         localStorage.name,
         dashboard.name

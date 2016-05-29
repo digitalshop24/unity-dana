@@ -16,6 +16,12 @@ export default class GoodsService {
         })
     }
 
+    getById(id) {
+        return this.api.get(`/goods/${id}`).then((res) => {
+            return res.data;
+        })
+    }
+
     getHits() {
         return this.api.get('/goods/hit').then((res) => {
             return res.data;

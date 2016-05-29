@@ -3,14 +3,17 @@
 import angular from 'angular';
 
 import HeaderCtrl from './header/controller.js';
-import GoodsService from './goodsService.js'
-import main from './main/index.js'
+import GoodsService from './goodsService.js';
+import main from './main/index.js';
+import card from './card/index.js';
+
 
 
 
 export default angular.module('dashboard',
     [
-        main.name
+        main.name,
+        card.name
     ])
     .service('goodsService', GoodsService)
     /*.service('login', Login)

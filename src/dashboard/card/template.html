@@ -1,0 +1,127 @@
+<div class="contentWraper container cataloguePage detail">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Каталог / <span>Какая-то определенная тематика</span></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="#" data-toggle="modal" data-target="#detModal">
+                <div class="bgDetailImg"
+                     style="background-image: url('{{ctrl.item.image_url}}');">
+                </div>
+            </a>
+            <ul class="pdfParth text-center">
+                <a href="">
+                    <li>купить PDF версию</li>
+                    <li><img src="/img/resources/img/pdf.png" alt="pdf" title="pdf"/></li>
+                </a>
+                <a href="" class="dop">
+                    <li>Дополнительные материалы к книге</li>
+                </a>
+            </ul>
+
+        </div>
+        <div class="col-md-7">
+            <p><strong ng-bind="::ctrl.item.name">Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия "Золотой
+                фонд российских учебников")</strong></p>
+
+            <p> Под ред. Н.Ш. Кремера <br/>
+                Изд-во ЮНИТИ, 2014 <br/>
+                ISBN {{::ctrl.item.isbn}} <br/>
+                479 стр., 10000 экз. <br/>
+                60x90/16
+            </p>
+
+            <p ng-bind-html="ctrl.item.content">
+                Эта книга — не только учебник, но и краткое руководство к решению задач по основам высшей математики.
+                Излагаемые в достаточно краткой форме с необходимыми обоснованиями основные положения учебного материала
+                сопровождаются большим количеством задач, приводимых с решениями и для самостоятельной работы. Там, где
+                это возможно, раскрывается экономический смысл математических понятий, приводятся простейшие приложения
+                высшей математики в экономике (балансовые модели, предельный анализ, эластичность функций,
+                производственные функции, модели динамики и т.п.). Для студентов и аспирантов экономических вузов,
+                экономистов и лиц, занимающихся самообразованием.
+            </p>
+
+            <p class="price">
+                Цена: {{::ctrl.item.price}} руб.
+            </p>
+            <button class="mainBtn">Купить</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <hr/>
+            <h2 class="text-center">Новинки месяца</h2>
+        </div>
+    </div>
+</div>
+<div class="container airBottom">
+    <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            <figure class="newProduct">
+                <a href="">
+                    <div class="bgWrap" style="background-image: url('../img/just.png');"></div>
+                    <figcaption>
+                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
+                            "Золотой фонд российских учебников")</p>
+
+                        <p class="text-center"><strong>price</strong></p>
+                    </figcaption>
+                </a>
+                <button class="mainBtn">Купить</button>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            <figure class="newProduct">
+                <a href="">
+                    <div class="bgWrap" style="background-image: url('../img/just.png');"></div>
+                    <figcaption>
+                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
+                            "Золотой фонд российских учебников")</p>
+
+                        <p class="text-center"><strong>price</strong></p>
+                    </figcaption>
+                </a>
+                <button class="mainBtn">Купить</button>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            <figure class="newProduct">
+                <a href="">
+                    <div class="bgWrap" style="background-image: url('../img/just.png');"></div>
+                    <figcaption>
+                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
+                            "Золотой фонд российских учебников")</p>
+
+                        <p class="text-center"><strong>price</strong></p>
+                    </figcaption>
+                </a>
+                <button class="mainBtn">Купить</button>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            <figure class="newProduct">
+                <a href="">
+                    <div class="bgWrap" style="background-image: url('../img/just.png');"></div>
+                    <figcaption>
+                        <p>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
+                            "Золотой фонд российских учебников")</p>
+
+                        <p class="text-center"><strong>price</strong></p>
+                    </figcaption>
+                </a>
+                <button class="mainBtn">Купить</button>
+            </figure>
+        </div>
+    </div>
+</div>
