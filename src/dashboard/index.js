@@ -8,7 +8,7 @@ import Login from './login/index';
 import Registration from './registration/index';
 import Recover from './recover/index';
 import main from './main/index.js';
-import card from './card/index.js';
+import card from './details/index.js';
 import profile from './profile/index.js';
 import catalog from './catalog/index.js';
 import price from './price/index.js';

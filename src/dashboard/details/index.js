@@ -1,16 +1,16 @@
 'use strict';
 
 import angular from 'angular';
-import GoodsCtrl from './controller.js';
+import DetailsCtrl from './controller.js';
 
-export default angular.module('dashboard.card', [
+export default angular.module('dashboard.details', [
 ])
     .config(function ($stateProvider) {
         $stateProvider
-            .state('dashboard.card', {
+            .state('dashboard.details', {
                 template: require('./template.html'),
                 url: '/goods/:id',
-                controller: GoodsCtrl,
+                controller: DetailsCtrl,
                 controllerAs: 'ctrl',
                 resolve: {
                     item: (goodsService, $stateParams) => {

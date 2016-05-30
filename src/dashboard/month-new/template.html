@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in ctrl.monthNewGoods">
             <figure class="newProduct">
-                <a ui-sref="dashboard.card({id: item.id})">
+                <a ui-sref="dashboard.details({id: item.id})">
                     <div class="bgWrap" style="background-image: url('{{item.image_url}}');"></div>
                     <figcaption>
                         <p ng-bind="::item.name">Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник.

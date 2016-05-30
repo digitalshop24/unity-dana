@@ -3,7 +3,7 @@
         <div class="col-sm-12 col-md-12 main">
             <div class="bookCarousel">
                 <slick slides-to-show="7" autoplay="true" center-padding="60px">
-                    <div class="item" ng-click="$state.go('dashboard.card', {id: hit.id})" style="background-image:url('{{hit.image_url}}');" ng-repeat="hit in ctrl.hits"></div>
+                    <div class="item" ng-click="$state.go('dashboard.details', {id: hit.id})" style="background-image:url('{{hit.image_url}}');" ng-repeat="hit in ctrl.hits"></div>
                 </slick>
             </div>
         </div>
