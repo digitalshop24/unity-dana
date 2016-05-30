@@ -6,8 +6,8 @@ import HeaderCtrl from './header/controller.js';
 import GoodsService from './goodsService.js';
 import Login from './login/index';
 import Registration from './registration/index';
-import Recover from './recover/index';
 import main from './main/index.js';
+import recover from './recover-password/index.js';
 import card from './details/index.js';
 import profile from './profile/index.js';
 import catalog from './catalog/index.js';
@@ -24,12 +24,12 @@ export default angular.module('dashboard',
         profile.name,
         catalog.name,
         price.name,
+        recover.name,
         monthNewGoods.name
     ])
     .service('goodsService', GoodsService)
     .service('login', Login)
     .service('registration', Registration)
-    .service('recover', Recover)
     /*
     .service('modal', Modal)
     .service('modalSpeed', ModalSpeed)
