@@ -166,6 +166,7 @@ nav {
     background-size: cover;
     background-position: center center;
     box-shadow: 5px 5px 5px #999;
+    cursor: pointer;
   }
 }
 
@@ -211,6 +212,9 @@ nav {
         padding: 0 50px 10px;
         margin: auto;
         line-height: 19px;
+      }
+      p:nth-child(1) {
+        height: 100px;
       }
     }
     .mainBtn {
@@ -731,6 +735,9 @@ footer {
 .mainBtn:hover {
   color: #fff;
   background-color: $gold;
+}
+.mainBtn:focus {
+  outline:none;
 }
 
 // MODAL STYLES 
