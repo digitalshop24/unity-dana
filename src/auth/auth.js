@@ -29,7 +29,7 @@ export default class AuthService {
     }
 
     initSession(response) {
-        this.session.token = response.data.user.token;
+        this.session.token = response.data.user.auth_token;
         this.session.user = Object.assign(this.session.user, response.data.user);
         this.session.isAuthenticated = true;
     }
