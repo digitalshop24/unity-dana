@@ -39,16 +39,16 @@ ul li {
 
 @font-face {
   font-family: "HelveticaLight";
-  src: url("../fonts/HelveticaLight/HelveticaLight.eot");
-  src: url("../fonts/HelveticaLight/HelveticaLight.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaLight/HelveticaLight.woff") format("woff"), url("../fonts/HelveticaLight/HelveticaLight.ttf") format("truetype");
+  src: url("fonts/HelveticaLight/HelveticaLight.eot");
+  src: url("fonts/HelveticaLight/HelveticaLight.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaLight/HelveticaLight.woff") format("woff"), url("../fonts/HelveticaLight/HelveticaLight.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: "HelveticaThin";
-  src: url("../fonts/HelveticaThin/HelveticaThin.eot");
-  src: url("../fonts/HelveticaThin/HelveticaThin.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaThin/HelveticaThin.woff") format("woff"), url("../fonts/HelveticaThin/HelveticaThin.ttf") format("truetype");
+  src: url("fonts/HelveticaThin/HelveticaThin.eot");
+  src: url("fonts/HelveticaThin/HelveticaThin.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaThin/HelveticaThin.woff") format("woff"), url("../fonts/HelveticaThin/HelveticaThin.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
@@ -357,6 +357,14 @@ footer {
     width: 500px;
   }
 
+}
+
+.restorePas {
+  margin:60px 0 80px;
+  min-height: 32vh;
+  .mainBtn {
+    margin-top: 50px;
+  } 
 }
 
 // CATALOGUE PAGE CATALOGUE PAGE CATALOGUE PAGE CATALOGUE PAGE
