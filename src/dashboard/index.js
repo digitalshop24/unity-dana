@@ -16,6 +16,7 @@ import price from './price/index.js';
 import news from './news/index.js';
 import monthNewGoods from './month-new/index.js';
 import bottomNavBar from './bottom-navbar/index.js';
+import headerScroll from './header/scroll.js';
 
 
 
@@ -30,6 +31,7 @@ export default angular.module('dashboard',
         recover.name,
         news.name,
         bottomNavBar.name,
+        headerScroll.name,
         monthNewGoods.name
     ])
     .service('goodsService', GoodsService)
