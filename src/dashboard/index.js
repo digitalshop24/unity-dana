@@ -9,7 +9,8 @@ import Login from './login/index';
 import Registration from './registration/index';
 import main from './main/index.js';
 import recover from './recover-password/index.js';
-import card from './details/index.js';
+import details from './details/index.js';
+import card from './card/index.js';
 import profile from './profile/index.js';
 import catalog from './catalog/index.js';
 import price from './price/index.js';
@@ -24,6 +25,7 @@ import headerScroll from './header/scroll.js';
 export default angular.module('dashboard',
     [
         main.name,
+        details.name,
         card.name,
         profile.name,
         catalog.name,
