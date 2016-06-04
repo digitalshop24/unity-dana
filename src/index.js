@@ -26,20 +26,21 @@ export default angular.module('app',
     .service('auth', auth)
     .config(($locationProvider) => {
         $locationProvider.html5Mode(true);
+        NProgress.configure({trickleRate: 0.1, trickleSpeed: 200, showSpinner: false});
     })
     .run(($rootScope, $state) => {
         $rootScope.$state = $state;
     })
     .run(($rootScope) => {
 
-
-        /*$rootScope.$on('$stateChangeStart', () => {
+        $rootScope.$on('$stateChangeStart', () => {
             NProgress.start();
         });
         $rootScope.$on('$stateChangeSuccess', () => {
             NProgress.done();
-        });*/
-        $rootScope.$on('$stateChangeError', (err) => {
+        });
+        $rootScope.$on('$stateChangeError', () => {
+            NProgress.done();
             console.log("Error !" + err);
         });
     });
