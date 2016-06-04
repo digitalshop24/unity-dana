@@ -3,8 +3,8 @@
 import angular from 'angular';
 import localStorage from './service';
 
-export default angular.module('localStorage', ['ngStorage'])
+export default angular.module('localStorage', [])
     .service('localStorage', localStorage)
     .config(($localStorageProvider) => {
-        $localStorageProvider.setKeyPrefix('project-prefix-');
+        $localStorageProvider.setKeyPrefix('unity-dana-');
     });
