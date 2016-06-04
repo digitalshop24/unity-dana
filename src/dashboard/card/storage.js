@@ -34,6 +34,6 @@ export default class CardStorage {
     updatePriceValue() {
         this.resultPrice = this.goods.reduce(function (previousValue, currentValue) {
             return {price: previousValue.price + currentValue.price};
-        }).price;
+        }, {price: 0}).price;
     }
 }
