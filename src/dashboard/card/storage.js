@@ -15,10 +15,21 @@ export default class CardStorage {
 
     set goods(value) {
         this.storage.goods = this._goods = value;
+        this.updateCounters();
     }
 
     addItem(item) {
-        this.goods.push(item);
+        if(!this.goods.find(i => i.id == item.id)) {
+            this.goods.push(item);
+            this.updateCounters();
+        }
+    }
+
+    removeItem(item) {
+        const itemIndex = this.goods.findIndex(i => i.id == item.id);
+        if (itemIndex > -1) {
+            this.goods.splice(itemIndex, 1);
+        }
         this.updateCounters();
     }
 

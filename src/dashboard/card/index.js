@@ -17,6 +17,13 @@ export default angular.module('dashboard.card', [
                 controller: CardCtrl,
                 controllerAs: 'ctrl',
                 resolve: {
+                    goods: (cardService, cardStorage) => {
+                        const ids = cardStorage.goods.map(item => item.id);
+                        if(ids.length) {
+                            return cardService.getInfo(ids.join(","));
+                        }
+                        return [];
+                    }
                 }
             });
     });
