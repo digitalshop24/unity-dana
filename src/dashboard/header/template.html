@@ -29,8 +29,8 @@
                     <li><a href="#">Информация</a></li>
                     <li><a href="#">Об издательстве</a></li>
                     <li>
-                        <form class="navbarForm">
-                            <input type="text" placeholder="Поиск"/>
+                        <form class="navbarForm" ng-submit="ctrl.search()">
+                            <input type="text" ng-model="ctrl.query"  placeholder="Поиск"/>
                         </form>
                     </li>
                     <li class="cartScroll">

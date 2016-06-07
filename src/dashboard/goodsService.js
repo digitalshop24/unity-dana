@@ -6,7 +6,7 @@ export default class GoodsService {
     }
 
     get(page, perPage, sort, desc) {
-        return this.api.get('/goods',{
+        return this.api.get('/goods', {
             params: {
                 page: page,
                 per_page: perPage,
@@ -16,6 +16,16 @@ export default class GoodsService {
         }).then((res) => {
             return res.data;
         })
+    }
+
+    search(q) {
+        return this.api.get('/goods/search', {
+            params: {
+                query: q
+            }
+        }).then((res) => {
+            return res.data;
+        });
     }
 
     getById(id) {

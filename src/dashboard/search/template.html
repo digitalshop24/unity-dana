@@ -1,0 +1,7 @@
+<div class="contentWraper container cataloguePage detail">
+    <div class="row text-center pricePg">
+        <div class="col-md-12" ng-repeat="item in ctrl.items">
+            <a ui-sref="dashboard.details({id: item.id})" ng-bind="item.name"></a>
+        </div>
+    </div>
+</div>
