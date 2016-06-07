@@ -2,9 +2,11 @@
 
 import angular from 'angular';
 import PriceCtrl from './controller.js';
+import PriceService from './service.js';
 
 export default angular.module('dashboard.price', [
 ])
+    .service('priceService', PriceService)
     .config(function ($stateProvider) {
         $stateProvider
             .state('dashboard.price', {
@@ -15,6 +17,10 @@ export default angular.module('dashboard.price', [
                 resolve: {
                     newGoods: goodsService => {
                         return goodsService.getNewGoods();
+                    },
+
+                    price: priceService => {
+                        return priceService.getPrice();
                     }
                 }
             });

@@ -2,7 +2,8 @@
 
 
 export default class PriceCtrl {
-    constructor(newGoods) {
+    constructor(newGoods, price) {
         this.newGoods = newGoods;
+        this.price = price;
     }
 }
