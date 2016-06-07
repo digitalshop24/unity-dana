@@ -11,9 +11,9 @@
                 <p>Сортировать:</p>
                 <ul>
 
-                    <li class="active">по популярности</li>
-                    <li>по цене</li>
-                    <li>по новизне</li>
+                    <li ng-class="{'active' : ctrl.sort == 'popularity'}" ng-click="ctrl.sortBy('popularity')">по популярности</li>
+                    <li ng-class="{'active' : ctrl.sort == 'price'}" ng-click="ctrl.sortBy('price')">по цене</li>
+                    <li ng-class="{'active' : ctrl.sort == 'date'}" ng-click="ctrl.sortBy('date')">по новизне</li>
                 </ul>
             </div>
             <hr/>

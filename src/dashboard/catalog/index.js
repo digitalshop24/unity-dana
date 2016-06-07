@@ -14,12 +14,14 @@ export default angular.module('dashboard.catalog', [])
                 controller: CatalogCtrl,
                 controllerAs: 'ctrl',
                 params: {
-                    page: 0,
-                    perPage: 30
+                    page: 1,
+                    perPage: 30,
+                    sort: 'price',
+                    desc: false
                 },
                 resolve: {
                     items: (goodsService, $stateParams) => {
-                        return goodsService.get($stateParams.page, $stateParams.perPage);
+                        return goodsService.get($stateParams.page, $stateParams.perPage, $stateParams.sort, $stateParams.desc);
                     },
 
                     page: $stateParams => {
@@ -28,8 +30,15 @@ export default angular.module('dashboard.catalog', [])
 
                     perPage: $stateParams => {
                         return $stateParams.perPage;
-                    }
+                    },
 
+                    sort: $stateParams => {
+                        return $stateParams.sort;
+                    },
+
+                    desc: $stateParams => {
+                        return $stateParams.desc;
+                    }
                 }
             });
     });
