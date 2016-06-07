@@ -13,6 +13,7 @@ import details from './details/index.js';
 import card from './card/index.js';
 import profile from './profile/index.js';
 import catalog from './catalog/index.js';
+import contacts from './contacts/index.js';
 import price from './price/index.js';
 import news from './news/index.js';
 import search from './search/index.js';
@@ -35,6 +36,7 @@ export default angular.module('dashboard',
         recover.name,
         news.name,
         search.name,
+        contacts.name,
         bottomNavBar.name,
         headerScroll.name,
         monthNewGoods.name,

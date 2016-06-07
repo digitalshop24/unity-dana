@@ -20,6 +20,7 @@ export default angular.module('app',
         'slick',
         'ngStorage',
         'infinite-scroll',
+        'ymaps',
         localStorage.name,
         dashboard.name
     ])

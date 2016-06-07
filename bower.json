@@ -36,6 +36,7 @@
     "angular-mask": "~3.0.16",
     "socket.io-client": "^1.4.5",
     "ng-rollbar": "~1.9.1",
-    "angulartics-google-analytics": "~0.1.4"
+    "angulartics-google-analytics": "~0.1.4",
+    "angular-ymaps": "~0.1.0"
   }
 }
