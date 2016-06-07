@@ -11,9 +11,21 @@ export default angular.module('dashboard.news', [])
                 url: '/news',
                 controller: NewsCtrl,
                 controllerAs: 'ctrl',
+                params: {
+                    page: 1,
+                    perPage: 5
+                },
                 resolve: {
-                    news: newsService => {
-                        return newsService.get();
+                    news: (newsService,$stateParams) => {
+                        return newsService.get($stateParams.page, $stateParams.perPage);
+                    },
+
+                    page: $stateParams => {
+                        return $stateParams.page;
+                    },
+
+                    perPage: $stateParams => {
+                        return $stateParams.perPage;
                     }
                 }
             });

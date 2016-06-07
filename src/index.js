@@ -19,6 +19,7 @@ export default angular.module('app',
         'angularMoment',
         'slick',
         'ngStorage',
+        'infinite-scroll',
         localStorage.name,
         dashboard.name
     ])
