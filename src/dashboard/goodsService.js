@@ -5,13 +5,14 @@ export default class GoodsService {
         this.api = api;
     }
 
-    get(page, perPage, sort, desc) {
+    get(page, perPage, sort, desc, category) {
         return this.api.get('/goods', {
             params: {
                 page: page,
                 per_page: perPage,
                 sort: sort,
-                desc: desc
+                desc: desc,
+                category: category
             }
         }).then((res) => {
             return res.data;

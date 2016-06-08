@@ -18,6 +18,7 @@ import price from './price/index.js';
 import news from './news/index.js';
 import post from './post/index.js';
 import search from './search/index.js';
+import categories from './categories/index.js';
 import monthNewGoods from './month-new/index.js';
 import buyButton from './buy-button/index.js';
 import bottomNavBar from './bottom-navbar/index.js';
@@ -41,6 +42,7 @@ export default angular.module('dashboard',
         bottomNavBar.name,
         headerScroll.name,
         monthNewGoods.name,
+        categories.name,
         post.name,
         buyButton.name
     ])

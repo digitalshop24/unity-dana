@@ -1,7 +1,7 @@
 <div class="contentWraper container cataloguePage">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h1 name="top">Каталог</h1>
+            <h1 name="top">Каталог <span>/ <span>Какая-то определенная тематика</span></span></h1>
         </div>
     </div>
 
@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="LoadMoreBtns">
-                <button ng-click="ctrl.loadMore()">Загрузить ещё</button>
+                <button ng-hide="ctrl.hideDownloadButton" ng-click="ctrl.loadMore()">Загрузить ещё</button>
                 <a href="#top" class="mainBtn">Вернуться наверх</a>
             </div>
         </div>

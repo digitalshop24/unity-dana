@@ -10,7 +10,7 @@ export default angular.module('dashboard.catalog', [])
         $stateProvider
             .state('dashboard.catalog', {
                 template: require('./template.html'),
-                url: '/catalog',
+                url: '/catalog?category=',
                 controller: CatalogCtrl,
                 controllerAs: 'ctrl',
                 params: {
@@ -21,7 +21,7 @@ export default angular.module('dashboard.catalog', [])
                 },
                 resolve: {
                     items: (goodsService, $stateParams) => {
-                        return goodsService.get($stateParams.page, $stateParams.perPage, $stateParams.sort, $stateParams.desc);
+                        return goodsService.get($stateParams.page, $stateParams.perPage, $stateParams.sort, $stateParams.desc, $stateParams.category);
                     },
 
                     page: $stateParams => {
@@ -34,6 +34,10 @@ export default angular.module('dashboard.catalog', [])
 
                     sort: $stateParams => {
                         return $stateParams.sort;
+                    },
+
+                    category: $stateParams => {
+                        return $stateParams.category;
                     },
 
                     desc: $stateParams => {

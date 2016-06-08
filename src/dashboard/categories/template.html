@@ -1,0 +1,17 @@
+<div class="contentWraper container cataloguePage detail">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Каталог</h1>
+        </div>
+    </div>
+
+
+    <div class="collapseParth">
+        <h4 ng-repeat="category in ctrl.categories"><a ui-sref="dashboard.catalog({category: category.id})">{{::category.name}} ({{::category.amount}})</a></h4>
+    </div>
+</div>
+
+
+<div month-new-goods="ctrl.newGoods"></div>
+
+
