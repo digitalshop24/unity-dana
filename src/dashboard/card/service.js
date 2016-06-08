@@ -5,18 +5,14 @@ export default class CardService {
         this.api = api;
     }
 
-    getInfo(ids) {
-        return this.api.get('/goods/descriptions', {
-            params: {
-                goods_ids: ids
-            }
-        }).then((res) => {
+    createOrder(data) {
+        return this.api.post('/orders', data).then((res) => {
             return res.data;
         })
     }
 
-    createOrder(data) {
-        return this.api.post('/orders', data).then((res) => {
+    getRequisits() {
+        return this.api.get('/requisits').then((res) => {
             return res.data;
         })
     }

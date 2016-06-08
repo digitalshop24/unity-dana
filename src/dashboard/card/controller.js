@@ -2,12 +2,13 @@
 
 
 export default class CardCtrl {
-    constructor(cardService, cardStorage, goods) {
+    constructor(cardService, cardStorage, goods, requisits) {
         this.cardService = cardService;
         this.cardStorage = cardStorage;
         cardStorage.goods = goods;
         this.goods = cardStorage.goods;
         this.registration = true;
+        this.requisits = requisits;
     }
 
     createOrder() {

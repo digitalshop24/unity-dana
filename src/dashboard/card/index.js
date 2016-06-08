@@ -19,12 +19,16 @@ export default angular.module('dashboard.card', [
                 controller: CardCtrl,
                 controllerAs: 'ctrl',
                 resolve: {
-                    goods: (cardService, cardStorage) => {
+                    goods: (goodsService, cardStorage) => {
                         const ids = cardStorage.goods.map(item => item.id);
                         if(ids.length) {
-                            return cardService.getInfo(ids.join(","));
+                            return goodsService.getInfo(ids.join(","));
                         }
                         return [];
+                    },
+
+                    requisits: (cardService) => {
+                        return cardService.getRequisits();
                     }
                 }
             });

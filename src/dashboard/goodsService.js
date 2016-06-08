@@ -19,6 +19,16 @@ export default class GoodsService {
         })
     }
 
+    getInfo(ids) {
+        return this.api.get('/goods/descriptions', {
+            params: {
+                goods_ids: ids
+            }
+        }).then((res) => {
+            return res.data;
+        })
+    }
+
     search(q) {
         return this.api.get('/goods/search', {
             params: {
