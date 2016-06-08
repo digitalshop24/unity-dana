@@ -9,35 +9,37 @@
             <div class="row">
                 <form ng-submit="ctrl.createOrder()">
                     <div class="col-md-8">
-                        <div class="inCartWrapper">
+                        <div class="inCartWrapper" ng-show="ctrl.goods!=0">
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
                                     <tr ng-repeat="item in ctrl.goods">
-                                        <td ng-bind="::item.name">Высшая математика для экономистов. 3-е изд., перераб.
-                                            и доп. Учебник. Гриф МО
-                                            РФ. (Серия "Золотой фонд российских учебников")
-                                        </td>
+                                        <td ng-bind="::item.name"></td>
                                         <td>99 шт.</td>
                                         <td ng-bind="::item.price + ' р.'">12000 р.</td>
-                                        <td>31.3</td>
-                                        <td ng-click="ctrl.removeItem(item)">Х</td>
+                                        <td ng-click="ctrl.removeItem(item)">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </td>
                                     </tr>
                                     </tbody>
                                 </table>
                                 <button type="submit" class="grayBtn">Оформить заказ</button>
                             </div>
                         </div>
+                        <div class="inCartWrapper" ng-show="ctrl.goods==0">
+                            <h1>Корзина пуста</h1>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <div class="regWrap">
-                            <h3>Итого: {{ctrl.cardStorage.resultPrice}}</h3>
+                            <h3>Итого: {{ctrl.cardStorage.resultPrice}} <i class="fa fa-rub"></i> </h3>
+
 
 
                             <input type="email" ng-model="ctrl.email" placeholder="Эл. Почта" required/>
                             <input type="text" ng-model="ctrl.phone" placeholder="Телефон" required/>
                             <input type="checkbox" ng-model="ctrl.registration" id="checkIn" checked/>
-                            <label for="checkIn">Заргистрироваться</label>
+                            <label for="checkIn">Зарегистрироваться</label>
 
                         </div>
                         <div class="regWrap">
@@ -64,9 +66,9 @@
                             </form>
                         </div>
                         <div class="regWrap white">
-                            <h3>+7 (985) 777-77-77<br/> <span>(ПН—ВС 10:00—21:00)</span></h3>
-
-                            <p>Если у Вас возникли трудности с заказом или просто появился вопрос, позвоните нам.</p>
+                            <h3>Оплата:<br/><span> Безналичный расчет</span></h3>
+                            <h3>Реквизиты:<br/><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span></h3>
                         </div>
                     </div>
                 </form>

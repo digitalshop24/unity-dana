@@ -502,6 +502,9 @@ footer {
       background-color: #FAFAFA;
       border-radius: 20px;
     }
+     h1 {
+      padding-bottom: 30px;
+    }
     .table {
       margin-bottom: 70px;
       tbody {
@@ -510,6 +513,9 @@ footer {
           td {
             text-align: center;
             font-size: 17px;
+            i {
+              cursor: pointer;
+            }
           }
           td:nth-child(1) {
             max-width: 320px;
@@ -537,6 +543,9 @@ footer {
     h3 {
       margin: 0 0 10px;
       font-size: 21px;
+      i {
+        font-size: 16px;
+      }
     }
     input[type=text], input[type=email]{
       display: block;
@@ -632,7 +641,8 @@ footer {
       font-size: 18px;
       line-height: 25px;
       span {
-        color: #B9B9B9;
+        color:$main;
+        font-size: 15px;
       }
     }
   }
