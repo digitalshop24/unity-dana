@@ -1,18 +1,23 @@
 'use strict';
 
 import angular from "angular";
-import MonthGoodsCtrl from './controller.js';
+import MonthNewCtrl from './controller.js';
+import directive from './directive/index.js'
 
-export default angular.module('dashboard.month-new', [])
-    .directive('monthNewGoods', function () {
-        return {
-            bindToController: true,
-            restrict: 'EA',
-            scope: {
-                monthNewGoods: '='
-            },
-            template: require('./template.html'),
-            controller: MonthGoodsCtrl,
-            controllerAs: 'ctrl'
-        }
+export default angular.module('dashboard.month-new', [
+    directive.name
+])
+    .config(function ($stateProvider) {
+        $stateProvider
+            .state('dashboard.month-new', {
+                template: require('./template.html'),
+                url: '/month-new',
+                controller: MonthNewCtrl,
+                controllerAs: 'ctrl',
+                resolve: {
+                    newGoods: goodsService => {
+                        return goodsService.getNewGoods();
+                    }
+                }
+            });
     });

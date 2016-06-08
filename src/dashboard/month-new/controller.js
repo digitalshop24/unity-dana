@@ -1,6 +1,7 @@
 'use strict';
 
-export default class MonthGoodsCtrl {
-    constructor() {
+export default class MonthNewCtrl {
+    constructor(newGoods) {
+        this.newGoods = newGoods;
     }
 }

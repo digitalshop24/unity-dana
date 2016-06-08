@@ -1,27 +1,6 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <hr/>
-            <h2 class="text-center">Новинки месяца</h2>
-        </div>
-    </div>
-</div>
-<div class="container airBottom">
-    <div class="row">
-        <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in ctrl.monthNewGoods">
-            <figure class="newProduct">
-                <a ui-sref="dashboard.details({id: item.id})">
-                    <div class="bgWrap" style="background-image: url('{{item.image_url}}');"></div>
-                    <figcaption>
-                        <p ng-bind="::item.name">Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник.
-                            Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")</p>
 
-                        <p class="text-center"><strong>{{::item.price}} руб.</strong></p>
-                    </figcaption>
-                </a>
-                <div buy-button item="item"></div>
-            </figure>
-        </div>
-    </div>
+<div class="contentWraper container">
+    <div month-new-goods="ctrl.newGoods"></div>
 </div>
+
+

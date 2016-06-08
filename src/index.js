@@ -37,6 +37,10 @@ export default angular.module('app',
     .run(($rootScope) => {
 
         $rootScope.$on('$stateChangeStart', () => {
+            window.scrollTo(0, 0);
+        });
+
+        $rootScope.$on('$stateChangeStart', () => {
             NProgress.start();
         });
         $rootScope.$on('$stateChangeSuccess', () => {
