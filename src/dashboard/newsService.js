@@ -5,11 +5,13 @@ export default class NewsService {
         this.api = api;
     }
 
-    get(page, perPage) {
+    get(page, perPage, category, url) {
         return this.api.get('/posts',{
             params: {
                 page: page,
-                per_page: perPage
+                per_page: perPage,
+                category: category,
+                url: url
             }
         }).then((res) => {
             return res.data;

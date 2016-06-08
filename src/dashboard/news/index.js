@@ -13,11 +13,12 @@ export default angular.module('dashboard.news', [])
                 controllerAs: 'ctrl',
                 params: {
                     page: 1,
-                    perPage: 5
+                    perPage: 5,
+                    category: 'news'
                 },
                 resolve: {
                     news: (newsService,$stateParams) => {
-                        return newsService.get($stateParams.page, $stateParams.perPage);
+                        return newsService.get($stateParams.page, $stateParams.perPage, $stateParams.category);
                     },
 
                     page: $stateParams => {
@@ -26,6 +27,10 @@ export default angular.module('dashboard.news', [])
 
                     perPage: $stateParams => {
                         return $stateParams.perPage;
+                    },
+
+                    category: $stateParams => {
+                        return $stateParams.category;
                     }
                 }
             });

@@ -2,10 +2,11 @@
 
 
 export default class NewsCtrl {
-    constructor(news, newsService, page, perPage) {
+    constructor(news, newsService, page, perPage, category) {
         this.news = news;
         this.page = page;
         this.perPage = perPage;
+        this.category = category;
         this.busy = false;
         this.newsService = newsService;
     }
@@ -13,10 +14,10 @@ export default class NewsCtrl {
     loadMore() {
         if (this.busy) return;
         this.busy = true;
-        this.newsService.get(++this.page, this.perPage)
+        this.newsService.get(++this.page, this.perPage, this.category)
             .then((res) => {
                 this.news = this.news.concat(res);
-                this.busy = false;
+                this.busy = !res.length;
             }).catch(err => {
                 this.busy = false;
             });
