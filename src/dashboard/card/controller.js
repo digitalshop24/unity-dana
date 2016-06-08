@@ -12,7 +12,7 @@ export default class CardCtrl {
 
     createOrder() {
         this.cardService.createOrder({
-            goods_ids: this.cardStorage.goods.map(item => item.id).join(","),
+            goods_ids: this.cardStorage.getItemsId().join(","),
             number: this.phone,
             email: this.email,
             registration: this.registration
@@ -21,5 +21,9 @@ export default class CardCtrl {
 
     removeItem(item) {
         this.cardStorage.removeItem(item);
+    }
+
+    callback() {
+        this.cardStorage.updateCounters();
     }
 }
