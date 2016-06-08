@@ -9,7 +9,7 @@
             <div class="row">
                 <form ng-submit="ctrl.createOrder()">
                     <div class="col-md-8">
-                        <div class="inCartWrapper" ng-show="ctrl.goods!=0">
+                        <div class="inCartWrapper" ng-show="ctrl.goods.length">
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
@@ -26,7 +26,7 @@
                                 <button type="submit" class="grayBtn">Оформить заказ</button>
                             </div>
                         </div>
-                        <div class="inCartWrapper" ng-show="ctrl.goods==0">
+                        <div class="inCartWrapper" ng-show="!ctrl.goods.length">
                             <h1>Корзина пуста</h1>
                         </div>
                     </div>
