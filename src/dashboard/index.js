@@ -16,6 +16,7 @@ import catalog from './catalog/index.js';
 import contacts from './contacts/index.js';
 import price from './price/index.js';
 import news from './news/index.js';
+import post from './post/index.js';
 import search from './search/index.js';
 import monthNewGoods from './month-new/index.js';
 import buyButton from './buy-button/index.js';
@@ -40,6 +41,7 @@ export default angular.module('dashboard',
         bottomNavBar.name,
         headerScroll.name,
         monthNewGoods.name,
+        post.name,
         buyButton.name
     ])
     .service('goodsService', GoodsService)

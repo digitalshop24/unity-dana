@@ -26,8 +26,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Тематика</a></li>
                     <li><a ui-sref="dashboard.catalog">Продукция</a></li>
-                    <li><a href="#">Информация</a></li>
-                    <li><a href="#">Об издательстве</a></li>
+                    <li><a ui-sref="dashboard.post({url:'info'})">Информация</a></li>
+                    <li><a ui-sref="dashboard.post({url:'about-us'})">Об издательстве</a></li>
                     <li>
                         <form class="navbarForm" ng-submit="ctrl.search()">
                             <input type="text" ng-model="ctrl.query"  placeholder="Поиск"/>
