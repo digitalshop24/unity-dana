@@ -113,14 +113,21 @@ nav {
     }
   }
   .navbarForm {
+    display: flex;
     input {
       border: 1px solid $main;
       margin-top: 6px;
+      display: inline-block;
       border-radius: 0;
       padding: 6px 12px;
+    }
+    span {
       background-image: url("img/resources/img/search.png");
       background-position: right;
       background-repeat: no-repeat;
+      width: 34px;
+      height: 34px;
+      margin-top: 6px;
     }
   }
 }
@@ -404,6 +411,9 @@ footer {
     background-size: cover;
     background-position: center center;
   }
+  .nothingSearch {
+    margin: 21.5vh 0;
+  }
   .pdfParth {
     margin: 20px 40px;
     a {
@@ -442,14 +452,12 @@ footer {
       color: $main;
     }
     a {
-
-      p {
-        margin-top: 25px;
-        border-bottom: 1px solid $main;
-        display: table;
-        margin: auto;
-      }
-
+      // p {
+      //   margin-top: 25px;
+      //   border-bottom: 1px solid $main;
+      //   display: table;
+      //   margin: auto;
+      // }
     }
     img {
       max-width: 100px;

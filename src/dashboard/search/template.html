@@ -1,7 +1,23 @@
-<div class="contentWraper container cataloguePage detail">
-    <div class="row text-center pricePg">
-        <div class="col-md-12" ng-repeat="item in ctrl.items">
-            <a ui-sref="dashboard.details({id: item.id})" ng-bind="item.name"></a>
+<div class="contentWraper container cataloguePage detail airBottom">
+    <div class="row pricePg">
+        <div ng-show="ctrl.items==0" class="text-center nothingSearch">
+        <h3>По Вашему запросу<br/>ничего не найдено...</h3>
+        <a ui-sref="dashboard.catalog">вернуться к каталогу</a>
         </div>
-    </div>
+        <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in ctrl.items">
+            <figure class="newProduct">
+                <a ui-sref="dashboard.details({id: item.id})">
+                    <div class="bgWrap" style="background-image: url('{{item.image_url}}');"></div>
+                    <figcaption class="search">
+                        <p ng-bind="::item.name">Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник.
+                            Гриф МО РФ. (Серия
+                            "Золотой фонд российских учебников")</p>
+
+                        <p class="text-center"><strong>{{::item.price}} руб.</strong></p>
+                    </figcaption>
+                </a>
+                <div buy-button item="item"></div>
+            </figure>
+        </div>
+	</div>
 </div>

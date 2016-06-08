@@ -3,7 +3,7 @@
         <div class="container">
             <ul class="authorization navbar-right">
                 <li><a href="" ng-click="ctrl.openLoginPopup()">Вход</a></li>
-                <li><a href="">Контакты</a></li>
+                <li><a ui-sref="dashboard.contacts">Контакты</a></li>
                 <li class="cartWrap"><a ui-sref="dashboard.card"><img src="img/resources/img/cart.png" class="cart" alt="cart" name="cart"/> {{ctrl.cardStorage.itemsAmount}} товаров
                     <strong>{{ctrl.cardStorage.resultPrice}}</strong><i class="fa fa-rub"></i></a></li>
             </ul>
@@ -31,6 +31,7 @@
                     <li>
                         <form class="navbarForm" ng-submit="ctrl.search()">
                             <input type="text" ng-model="ctrl.query"  placeholder="Поиск"/>
+                            <span ng-click="ctrl.search()"></span>
                         </form>
                     </li>
                     <li class="cartScroll">
