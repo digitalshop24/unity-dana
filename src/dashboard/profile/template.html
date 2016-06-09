@@ -5,15 +5,44 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <div class="userInfo">
-                <br/><br/>
-                <input type="text" value="Имя пользователя"/>
-                <input type="text" value="Фамилия пользователя"/>
-                <input type="text" value="Телефон пользователя"/>
+        <div class="col-md-offset-2 col-md-8">
+            <div class="wrapperLk row">
+                <div class="col-md-6">
+                    <div class="right">
+                        <div class="userInfo">
+                            <input type="text" value="Имя пользователя"/>
+                            <input type="text" value="Фамилия пользователя"/>
+                            <input type="text" value="Телефон пользователя"/>
+                        </div>
+                        <div class="changePas">
+                            <p>Изменить пароль</p>
+                            <form name="changePas" class="authorizationForm">
+                                <input type="text" placeholder="старый пароль"/>
+                                <input type="text" placeholder="новый пароль"/>
+                                <input type="text" placeholder="подтверждение"/>
+                                <button class="grayBtn">Сохранить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="left">
+                        <div class="changePas">
+                            <p>Реквизиты</p>
+                            <form name="changePas" class="authorizationForm">
+                                <input type="text" placeholder="унп"/>
+                                <input type="text" placeholder="унп"/>
+                                <input type="text" placeholder="унп"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
-        <div class="changePas col-md-6">
+            
+        
+        <!-- <div class="changePas col-md-6">
             <br/>
 
             <p>Изменить пароль</p>
@@ -24,7 +53,7 @@
                 <input type="text" placeholder="подтверждение"/>
                 <button class="grayBtn">Сохранить</button>
             </form>
-        </div>
+        </div> -->
     </div>
 
     <div class="row">
