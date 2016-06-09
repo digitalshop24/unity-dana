@@ -16,7 +16,7 @@
                                     <tr ng-repeat="item in ctrl.goods">
                                         <td ng-bind="::item.name"></td>
                                         <td><spin item="item" callback="ctrl.callback()"/></td>
-                                        <td ng-bind="::item.price + ' р.'">12000 р.</td>
+                                        <td ng-bind="::item.price + ' р.'"></td>
                                         <td ng-click="ctrl.removeItem(item)">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </td>
