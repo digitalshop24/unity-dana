@@ -49,6 +49,10 @@ export default class CardStorage {
         return [].concat.apply([], this.goods.map(good => Array(+good.amount).fill(good.id)));
     }
 
+    isContained(item) {
+        return this.goods.findIndex(i => i.id == item.id) > -1;
+    }
+
     updateCounters() {
         this.updateAmountValue();
         this.updatePriceValue();
