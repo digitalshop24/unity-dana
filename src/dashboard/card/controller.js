@@ -13,7 +13,7 @@ export default class CardCtrl {
 
     createOrder() {
         this.cardService.createOrder({
-            goods_ids: this.cardStorage.getItemsId().join(","),
+            goods_ids: this.cardStorage.createItemsForOrder(),
             number: this.phone,
             email: this.email,
             registration: this.registration

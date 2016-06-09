@@ -14,10 +14,10 @@ export default class CardStorage {
     }
 
     set goods(value) {
-        if(this.goods) {
+        if (this.goods) {
             value.forEach(item => {
                 const foundedItem = this.goods.find(i => i.id == item.id);
-                if(foundedItem) {
+                if (foundedItem) {
                     item.amount = +foundedItem.amount || 1;
                 }
             });
@@ -29,7 +29,7 @@ export default class CardStorage {
     addItem(item) {
         item.amount = item.amount || 1;
         var found = this.goods.find(i => i.id == item.id);
-        if(!found) {
+        if (!found) {
             this.goods.push(item);
             this.updateCounters();
         } else {
@@ -45,8 +45,13 @@ export default class CardStorage {
         this.updateCounters();
     }
 
-    getItemsId() {
-        return [].concat.apply([], this.goods.map(good => Array(+good.amount).fill(good.id)));
+    createItemsForOrder() {
+        return this.goods.map(good => {
+            return {
+                id: good.id,
+                amount: good.amount
+            }
+        });
     }
 
     isContained(item) {
@@ -64,7 +69,7 @@ export default class CardStorage {
 
     updatePriceValue() {
         this.resultPrice = this.goods.reduce(function (previousValue, currentValue) {
-            return {price: previousValue.price + (currentValue.price*(+currentValue.amount))};
+            return {price: previousValue.price + (currentValue.price * (+currentValue.amount))};
         }, {price: 0}).price;
     }
 }
