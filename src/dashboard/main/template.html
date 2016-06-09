@@ -25,18 +25,18 @@
                 <div class="formWrap">
                     <ul>
                         <li>
-                            <input type="checkbox" checked="checked" id="c1" name="cc"/>
+                            <input ng-model="ctrl.novelty" type="checkbox" checked="checked" id="c1" name="cc"/>
                             <label for="c1"><span></span>Новинки месяца</label>
                         </li>
                         <li>
-                            <input type="checkbox" checked="checked" id="c2" name="cc"/>
+                            <input ng-model="ctrl.price" type="checkbox" checked="checked" id="c2" name="cc"/>
                             <label for="c2"><span></span>Прайс лист (MS Excel)</label>
                         </li>
                         <li>
-                            <input type="text" placeholder="Логин" class="text"/>
+                            <input ng-model="ctrl.email" type="text" placeholder="Логин" class="text"/>
                         </li>
                     </ul>
-                    <button class="grayBtn">Подписаться</button>
+                    <button class="grayBtn" ng-click="ctrl.subscribe()">Подписаться</button>
                 </div>
             </div>
         </div>

@@ -5,6 +5,7 @@ import angular from 'angular';
 import HeaderCtrl from './header/controller.js';
 import GoodsService from './goodsService.js';
 import NewsService from './newsService.js';
+import UsersService from './usersService.js';
 import Login from './login/index';
 import Registration from './registration/index';
 import main from './main/index.js';
@@ -23,6 +24,7 @@ import monthNewGoods from './month-new/index.js';
 import buyButton from './buy-button/index.js';
 import bottomNavBar from './bottom-navbar/index.js';
 import headerScroll from './header/scroll.js';
+import Modal from './modal/index';
 
 
 
@@ -48,8 +50,10 @@ export default angular.module('dashboard',
     ])
     .service('goodsService', GoodsService)
     .service('newsService', NewsService)
+    .service('usersService', UsersService)
     .service('login', Login)
     .service('registration', Registration)
+    .service('modal', Modal)
     .config($stateProvider => {
         $stateProvider
             .state('dashboard', {
