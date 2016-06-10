@@ -10,6 +10,7 @@ export default class CatalogCtrl {
         this.desc = desc;
         this.sort = sort;
         this.category = category;
+        this.categoryName = this.items.length ? this.items[0].category_name : '';
     }
 
     loadMore() {
@@ -23,7 +24,7 @@ export default class CatalogCtrl {
         this.desc = this.sort == sort ? !this.desc : false;
         this.sort = sort;
         this.page = 1;
-        this.goodsService.get(this.page, this.perPage, this.sort, this.desc).then(res => {
+        this.goodsService.get(this.page, this.perPage, this.sort, this.desc, this.category).then(res => {
             this.items = res;
         });
     }
