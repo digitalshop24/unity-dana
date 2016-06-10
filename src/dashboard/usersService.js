@@ -8,9 +8,9 @@ export default class UsersService {
     subscribe(email, novelty = true, price = true) {
         return this.api.post('/users/subscription',{
             params: {
-                user_id: email,
-                new: novelty,
-                price
+                email,
+                price,
+                new: novelty
             }
         }).then((res) => {
             return res.data;
