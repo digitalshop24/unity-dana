@@ -14,7 +14,7 @@ export default angular.module('dashboard.header.scroll', [])
                         if ($(window).scrollTop() == 0) {
                             $('.halfNav').addClass('vv');
                             $allNav.removeClass('vv');
-                            $('.navbar-brand img').css("width", "77%");
+                            $('.navbar-brand img').css("margin-top", "5px");
                             $allNav.css("margin-top", "30px");
                             $('.cartScroll').css("display", "none");
                             $allNav.css("top", "0");
@@ -22,7 +22,7 @@ export default angular.module('dashboard.header.scroll', [])
                         } else {
                             $allNav.css("margin-top", "0px");
                             $allNav.css("top", "0");
-                            $('.navbar-brand img').css("width", "72%");
+                            $('.navbar-brand img').css("margin-top", "10px");
                             $allNav.addClass('vv');
                             $('.halfNav').removeClass('vv');
                             $('.cartScroll').css("display", "block");

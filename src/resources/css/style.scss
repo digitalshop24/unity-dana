@@ -85,11 +85,13 @@ ul li {
 nav {
   background-color: #fff;
   .navbar-brand {
-    padding: 10px 15px;
+    padding:0;
+    margin-left:0 !important;
+    display: flex;
+    max-width:0px;
+    
     img {
-      display: block;
-      max-width: 77%;
-      margin-top: -5px;
+      height: 50px;
     }
   }
   ul.navbar-nav {
@@ -138,13 +140,14 @@ nav {
   li {
     display: inline-block;
     padding: 0 2px;
+    cursor: pointer;
     a {
       color: $main;
     }
   }
-  li:nth-child(2):before {
+  li.line:after {
     content: "|";
-    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
@@ -688,6 +691,7 @@ footer {
 .dashboardPg {
   margin-bottom: 50px;
   .wrapperLk {
+    display: flex;
     padding:40px;
     margin: 20px 0 40px; 
     background-color:#FAFAFA;
@@ -828,6 +832,31 @@ footer {
         border: 0;
         border-bottom: 1px solid black;
         padding: 10px 0;
+      }
+      .selectType {
+        display: flex;
+        justify-content: center;
+        width: 55%;
+        margin: 30px auto;
+        input[type="radio"] {
+          display: none;
+        }
+        .hide-radio + label {
+          background-color: transparent;
+          border:1px solid #000;
+          border-radius:50%;
+          width:10px;
+          height:10px;
+          margin: 0 100px 0 0;
+          white-space:nowrap;
+          text-indent:20px;
+          line-height:10px;
+          cursor: pointer;
+          font-weight: 200;
+        }
+        .hide-radio:checked + label {
+          background-color:#000;
+        }
       }
       ul {
         margin: 40px 0;

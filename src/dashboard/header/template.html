@@ -2,9 +2,9 @@
     <div class="navbar registration">
         <div class="container">
             <ul class="authorization navbar-right">
-                <li ng-show="!ctrl.session.isAuthenticated"><a href="" ng-click="ctrl.openLoginPopup()">Вход</a></li>
-                <li ng-show="ctrl.session.isAuthenticated"><a ui-sref="dashboard.profile" >Кабинет</a></li>
-                <li ng-show="ctrl.session.isAuthenticated"><a ng-click="ctrl.logout()" >Выход</a></li>
+                <li class="line" ng-show="!ctrl.session.isAuthenticated"><a ng-click="ctrl.openLoginPopup()">Вход</a></li>
+                <li class="line" ng-show="ctrl.session.isAuthenticated"><a ui-sref="dashboard.profile" >Кабинет</a></li>
+                <li class="line" ng-show="ctrl.session.isAuthenticated"><a ng-click="ctrl.logout()" >Выход</a></li>
                 <li><a ui-sref="dashboard.contacts">Контакты</a></li>
                 <li class="cartWrap"><a ui-sref="dashboard.card"><img src="img/resources/img/cart.png" class="cart" alt="cart" name="cart"/> {{ctrl.cardStorage.itemsAmount}} товаров
                     <strong>{{ctrl.cardStorage.resultPrice}}</strong><i class="fa fa-rub"></i></a></li>

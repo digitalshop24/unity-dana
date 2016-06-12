@@ -4,12 +4,13 @@
             <h1>Личный кабинет</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row"> <!-- ЕСЛИ ЮРИДИЧЕСКОЕ ЛИЦО -->
         <div class="col-md-offset-2 col-md-8">
             <div class="wrapperLk row">
                 <div class="col-md-6">
                     <div class="right">
                         <div class="userInfo">
+                            <br/>
                             <input type="text" value="Имя пользователя"/>
                             <input type="text" value="Фамилия пользователя"/>
                             <input type="text" value="Телефон пользователя"/>
@@ -37,23 +38,33 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
-            
-        
-        <!-- <div class="changePas col-md-6">
-            <br/>
-
-            <p>Изменить пароль</p>
-
-            <form name="changePas" class="authorizationForm">
-                <input type="text" placeholder="старый пароль"/>
-                <input type="text" placeholder="новый пароль"/>
-                <input type="text" placeholder="подтверждение"/>
-                <button class="grayBtn">Сохранить</button>
-            </form>
-        </div> -->
+    </div>
+    <div class="row"> <!-- ЕСЛИ ФИЗИЧЕСКОЕ ЛИЦО -->
+        <div class="col-md-offset-2 col-md-8">
+            <div class="wrapperLk">
+                <div class="col-md-6 ">
+                    <div class="userInfo right">
+                        <br/>
+                        <input type="text" value="Имя пользователя"/>
+                        <input type="text" value="Фамилия пользователя"/>
+                        <input type="text" value="Телефон пользователя"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="changePas left">
+                        <p>Изменить пароль</p>
+                        <form name="changePas" class="authorizationForm">
+                            <input type="text" placeholder="старый пароль"/>
+                            <input type="text" placeholder="новый пароль"/>
+                            <input type="text" placeholder="подтверждение"/>
+                            <button class="grayBtn">Сохранить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row">

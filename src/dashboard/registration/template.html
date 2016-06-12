@@ -7,19 +7,15 @@
         <input type="email" ng-model="ctrl.form.email" placeholder="Электронная почта" required/>
         <input type="password" minlength="8" ng-model="ctrl.form.password" placeholder="Пароль" required/>
         <input type="password" minlength="8" ng-model="ctrl.form.passwordConfirmation" placeholder="Подтверждение пароля" required/>
-        <!--<ul>
-            <li> Введите текст с картинки
-                  <span>
-                    <a href="">
-                        <img src="img/rotate.png" />
-                    </a>
-                  </span>
-            </li>
-            <li>
-                <span><input type="text" /></span>
-                <span><img src="img/capcha.png" name="Капча" alt="Капча" /></span>
-            </li>
-        </ul>-->
+
+        <div class="selectType">
+            <input type="radio" id="radioOne" name="entry.1152934664" checked="checked" class="hide-radio" value="физ.лицо"/>
+            <label for="radioOne">физ. лицо</label>
+            <input type="radio" id="radioDva" name="entry.1152934664" class="hide-radio" value="юр.лицо" />
+            <label for="radioDva">юр. лицо</label>
+
+        </div>
+
         <p ng-bind="ctrl.errorText"></p>
         <button type="submit" class="mainBtn">Зарегистрироваться</button>
     </form>
