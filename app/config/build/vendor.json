@@ -15,7 +15,7 @@
             "bower_components/moment/min/moment.min.js",
             "bower_components/angular-moment/angular-moment.min.js",
             "bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js",
-            "bower_components/angular-ymaps/angular-ymaps.js"
+            "src/resources/js/ya-map-2.1.min.js"
         ],
         "dest": "vendor.min.js"
     },

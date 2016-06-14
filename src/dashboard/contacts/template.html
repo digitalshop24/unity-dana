@@ -33,24 +33,11 @@
         <div class="col-md-12">
 
             <div id="map" style="width:100%; height:450px; margin-bottom: 20px;">
-                <yandex-map center="ctrl.coords" zoom="ctrl.zoom">
-                    <ymap-marker coordinates="ctrl.coords"></ymap-marker>
-                </yandex-map>
+                <ya-map ya-zoom="16" ya-center="[37.49117, 55.788753]" style="width: 100%;height: 450px;display: block;">
+                    <ya-geo-object ya-source="ctrl.point" ya-options="{preset: 'islands#icon',iconColor: '#0095b6'}"></ya-geo-object>
+                </ya-map>
+
             </div>
-            <!--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-            <script type="text/javascript">
-                ymaps.ready(init);
-                var myMap,
-                        myPlacemark;
-                function init(){
-                    myMap = new ymaps.Map("map", {
-                        center: [55.788753, 37.49117], zoom: 16});
-                    myPlacemark = new ymaps.Placemark([55.788753, 37.49117], {
-                        hintContent: 'Москва. unity-dana', });
-                    myMap.behaviors.disable('scrollZoom');
-                    myMap.geoObjects.add(myPlacemark);
-                }
-            </script>-->
         </div>
     </div>
     <div class="row">
