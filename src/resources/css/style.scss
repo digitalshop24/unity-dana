@@ -17,6 +17,10 @@ body {
 p, ol, ul {
   margin: 0;
 }
+input:focus,textarea:focus {
+  outline:none;
+
+}
 
 a {
   color: #000;
