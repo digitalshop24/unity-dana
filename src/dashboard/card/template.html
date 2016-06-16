@@ -1,7 +1,9 @@
 <div class="contentWraper cartPage container">
     <div class="row">
-        <div class="col-md-12 text-center">
-            <h1>Корзина</h1>
+        <div class="col-md-12">
+            <div class="broad">
+                <a><span>Корзина</span></a>
+            </div>
         </div>
     </div>
     <div class="row cartWrap">
@@ -29,6 +31,27 @@
                         <div class="inCartWrapper" ng-show="!ctrl.goods.length">
                             <h1>Корзина пуста</h1>
                         </div>
+                         <br/> <!-- Потом удалить  -->
+                        <div class="inCartWrapper">
+                            <h2>Вы успешно оформили заказ.<br/> В ближайшее время мы с Вами свяжемся.</h2>
+                            <h3>Номер заказа: <span>3423 / 22</span></h3>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                    <tr ng-repeat="item in ctrl.goods">
+                                        <td ng-bind="::item.name"></td>
+                                        <!-- <td><spin item="item" callback="ctrl.callback()"/></td> -->
+                                        <td ng-bind="::item.price + ' р.'"></td>
+                                        <td>
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
                     </div>
                     <div class="col-md-4">
                         <div class="regWrap">
