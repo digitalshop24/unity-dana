@@ -1,1 +1,2 @@
-<button type="button" class="mainBtn" ng-class="{active:ctrl.inCard}" ng-click="ctrl.buy();">Купить</button>
+<button type="button" class="mainBtn" ng-show="!ctrl.inCard" ng-click="ctrl.buy();"  >Купить</button>
+<button type="button" class="mainBtn active" ng-show="ctrl.inCard">В корзине</button>  <!-- ng-click="ctrl.remove();" НУжно написать такую фичу -->

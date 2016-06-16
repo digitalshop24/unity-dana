@@ -792,6 +792,7 @@ footer {
 .mainBtn.active {
   background-color: $gold;
   color: #fff;
+  content:"В корзине";
 }
 
 .mainBtn.active:before {
