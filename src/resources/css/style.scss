@@ -28,6 +28,9 @@ a:hover, a:focus, input {
   color: $main;
 }
 
+hr.hrDet {
+  margin:0 0 40px;
+}
 ul {
   padding: 0;
 }
@@ -314,7 +317,7 @@ footer {
 
 .newsPage {
   h1 {
-    margin: 0 0 30px;
+    margin: 0 0 10px;
   }
   .newsWrapper {
     max-width: 50em;
@@ -334,7 +337,7 @@ footer {
 
 .contactsPage {
   h1 {
-    margin: 0 0 30px;
+    margin: 0 0 10px;
   }
   p {
     font-size: 17px;
@@ -347,7 +350,7 @@ footer {
     margin: 30px 0;
   }
   .feedbackWrap {
-    margin-bottom: 50px;
+    margin: 50px 0;
     input[type=text], input[type=email] {
       border: 0;
       display: block;
@@ -378,29 +381,31 @@ footer {
   } 
 }
 
+.broad {
+  font-size: 22px;
+  border-bottom:1px solid #E9E9E9;
+  span {
+    margin: 0 0 10px;
+  }
+} 
 // CATALOGUE PAGE CATALOGUE PAGE CATALOGUE PAGE CATALOGUE PAGE
 // CATALOGUE PAGE CATALOGUE PAGE CATALOGUE PAGE CATALOGUE PAGE
 
 .cataloguePage {
-  h1 {
-    margin: 0 0 30px;
-    span {
-      font-size: 22px;
-    }
-  }
+  
   .mixing {
-    display: table;
-    margin: 30px auto;
+    text-align: right;
     ul, p {
       display: inline-block;
       font-size: 17px;
       li {
         display: inline-block;
-        padding: 0 0 0 30px;
+        padding: 10px 0 10px 20px;
         cursor: pointer;
+        color:#888;
       }
       li.active {
-        color: #888;
+        color:$main;
       }
     }
   }
@@ -470,28 +475,33 @@ footer {
 }
 
 .collapseParth {
-  max-width: 73em;
-  margin: auto;
-  h4 {
-    margin: 15px 0;
-    a {
-      color: #000;
-    }
-    a:focus, a:hover {
-      color: #000;
-    }
-  }
-  ul {
-    li {
-      font-size: 17px;
-      margin-left: 20px;
-      a, a:hover, a:focus {
-        color: $main;
+  .panel-group {
+    margin: 30px 0 0;
+   .panel-default {
+    border:0;
+    box-shadow:none;
+      .panel-heading {
+        padding: 10px 0px;
+        background-color: transparent;
+        border:0;
+      }
+      .panel-heading + .panel-collapse {
+        .panel-body {
+          border:0;
+          padding: 0 15px;
+          
+        }
+      }
+      .panel-body {
+        ul {
+            li {
+              padding:5px 15px;
+            }
+          }
       }
     }
 
   }
-
 }
 
 // CART PAGE CART PAGE CART PAGE CART PAGE CART PAGE CART PAGE
@@ -507,7 +517,7 @@ footer {
       border-radius: 20px;
     }
      h1 {
-      padding-bottom: 30px;
+      padding-bottom: 10px;
     }
     .table {
       margin-bottom: 70px;

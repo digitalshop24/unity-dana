@@ -1,22 +1,22 @@
 <div class="contentWraper container cataloguePage">
     <div class="row">
-        <div class="col-md-12 text-center">
-            <h1 name="top">Каталог <span ng-show="ctrl.categoryName">/ <span ng-bind="::ctrl.categoryName">Какая-то определенная тематика</span></span></h1>
+        <div class="col-md-12">
+            <div class="broad">
+                <a><span>Продукция</span></a> 
+                <!-- / <a><span ng-bind="::ctrl.categoryName"></span></a> -->
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
             <div class="mixing">
-                <p>Сортировать:</p>
                 <ul>
-
                     <li ng-class="{'active' : ctrl.sort == 'popularity'}" ng-click="ctrl.sortBy('popularity')">по популярности</li>
                     <li ng-class="{'active' : ctrl.sort == 'price'}" ng-click="ctrl.sortBy('price')">по цене</li>
                     <li ng-class="{'active' : ctrl.sort == 'date'}" ng-click="ctrl.sortBy('date')">по новизне</li>
                 </ul>
             </div>
-            <hr/>
         </div>
     </div>
 </div>
@@ -27,9 +27,7 @@
                 <a  ui-sref="dashboard.details({id: item.id})">
                     <div class="bgWrap" style="background-image: url('{{item.image_url}}');"></div>
                     <figcaption>
-                        <p ng-bind="::item.name">Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник.
-                            Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")</p>
+                        <p ng-bind="::item.name"></p>
 
                         <p class="text-center"><strong>{{::item.price}} руб.</strong></p>
                     </figcaption>
