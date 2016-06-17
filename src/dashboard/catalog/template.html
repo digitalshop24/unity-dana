@@ -25,7 +25,9 @@
         <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in ctrl.items">
             <figure class="newProduct">
                 <a  ui-sref="dashboard.details({id: item.id})">
-                    <div class="bgWrap" style="background-image: url('{{item.image_url}}');"></div>
+                    <div class="bgWrap" ng-class="{v2:item.type === 'v2'}">
+                        <div class="bg" style="background-image:url('{{item.image_url}}');"></div>
+                    </div>
                     <figcaption>
                         <p ng-bind="::item.name"></p>
 
