@@ -7,6 +7,7 @@ export default class RegistrationCtrl {
         this.auth = auth;
         this.rootscope = $rootScope;
         this.state = $state;
+        this.legal = false;
     }
 
     close() {
@@ -22,7 +23,8 @@ export default class RegistrationCtrl {
 
         this.auth.register({
             email: this.form.email,
-            password: this.form.password
+            password: this.form.password,
+            legal: this.legal
         })
             .then(() => {
                 this.handleSuccessRegistration();
