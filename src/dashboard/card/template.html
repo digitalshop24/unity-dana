@@ -61,8 +61,22 @@
 
                             <input type="email" ng-model="ctrl.email" placeholder="Эл. Почта" required/>
                             <input type="text" ng-model="ctrl.phone" placeholder="Телефон" required/>
-                            <input type="checkbox" ng-model="ctrl.registration" id="checkIn" checked/>
-                            <label for="checkIn">Зарегистрироваться</label>
+                            <!-- <input type="checkbox" ng-model="ctrl.registration" id="checkIn" checked/> -->
+                            <!-- <label for="checkIn"></label> -->
+                            <div class="accord">
+                                <input id="ac-1" ng-model="ctrl.registration" name="accordion-1" type="checkbox" checked />
+                                <label for="ac-1">Зарегистрироваться</label>
+                                <article class="ac-small">
+                                    <input type="text" ng-model="ctrl.pass" placeholder="Пароль"/>
+                                    <input type="text" ng-model="ctrl.passCheck" placeholder="Подтверждение пароля"/>
+                                    <div class="selectType">
+                                        <input id="radioOne" name="entry.1152934664" checked="checked" class="hide-radio" value="физ.лицо" type="radio">
+                                        <label for="radioOne">физ. лицо</label>
+                                        <input id="radioDva" name="entry.1152934664" class="hide-radio" value="юр.лицо" type="radio">
+                                        <label for="radioDva">юр. лицо</label>
+                                    </div>
+                                </article>
+                            </div>
 
                         </div>
                         <div class="regWrap">
