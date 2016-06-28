@@ -7,29 +7,19 @@
             </div>
         </div>
     </div>
-
-	<!-- ui-sref="dashboard.catalog({category: category.id})" -->
 	<div class="row">
         <div class="col-md-12">
-        	<accordion close-others="true" class="collapseParth">
-		        <accordion-group is-open="isopen" ng-repeat="category in ctrl.categories">
-		          <accordion-heading>
-		            {{::category.name}} ({{::category.amount}})
-		          </accordion-heading>
-		          <div > <!-- ng-repeat="subitem in item.subitems" -->
-		          	<ul>
-		            <li><a href=""> Не знаю что тут будет</a></li>
-		            <li><a href="">Не знаю что тут будет</a></li>
-		            <li><a href="">Не знаю что тут будет</a></li>
-		          </ul>
-		          </div>
-		        </accordion-group>
-		     </accordion>
+		     <ul class="category" ng-repeat="category in ctrl.categories" >
+	        	<li class="title" ui-sref="dashboard.catalog({category: category.id})"> {{::category.name}} ({{::category.amount}})
+	        		<ul>
+	        			<li>Не знаю что тут будет</li>
+			            <li>Не знаю что тут будет</li>
+			            <li>Не знаю что тут будет</li>
+	        		</ul>
+	        	</li>
+	        </ul>
         </div>
     </div>
-    
-
-
 </div>
 
 
