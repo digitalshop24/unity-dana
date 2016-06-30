@@ -25,6 +25,7 @@ import buyButton from './buy-button/index.js';
 import bottomNavBar from './bottom-navbar/index.js';
 import headerScroll from './header/scroll.js';
 import Modal from './modal/index';
+import thx from './thx/index';
 
 
 
@@ -46,7 +47,8 @@ export default angular.module('dashboard',
         monthNewGoods.name,
         categories.name,
         post.name,
-        buyButton.name
+        buyButton.name,
+        thx.name
     ])
     .service('goodsService', GoodsService)
     .service('newsService', NewsService)

@@ -897,32 +897,9 @@ footer {
         border-bottom: 1px solid black;
         padding: 10px 0;
       }
-
-      // .selectType {
-      //   display: flex;
-      //   justify-content: center;
-      //   width: 55%;
-      //   margin: 30px auto;
-      //   input[type="radio"] {
-      //     display: none;
-      //   }
-      //   .hide-radio + label {
-      //     background-color: transparent;
-      //     border:1px solid #000;
-      //     border-radius:50%;
-      //     width:10px;
-      //     height:10px;
-      //     margin: 0 100px 0 0;
-      //     white-space:nowrap;
-      //     text-indent:20px;
-      //     line-height:10px;
-      //     cursor: pointer;
-      //     font-weight: 200;
-      //   }
-      //   .hide-radio:checked + label {
-      //     background-color:#000;
-      //   }
-      // }
+      input[type="checkbox"],input[type="radio"]{
+        display: none;
+      }
       ul {
         margin: 40px 0;
         li {

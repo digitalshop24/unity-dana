@@ -1,0 +1,67 @@
+<div class="contentWraper cartPage container">
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+    <div class="row cartWrap">
+        <div class="col-md-12">
+            <div class="row">
+                <form ng-submit="ctrl.createOrder()">
+                    <div class="col-md-8">
+
+                        <div class="inCartWrapper">
+                            <h2>Вы успешно оформили заказ.<br/> В ближайшее время мы с Вами свяжемся.</h2>
+                            <h3>Номер заказа: <span>3423 / 22</span></h3>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                    <tr> <!-- тут репитим покупки -->
+                                        <td>тут выводится название книги</td>
+                                        <td >тут прайс</td>
+                                        <td>
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="regWrap">
+                            <h3>Итого: 800 <i class="fa fa-rub"></i> </h3>
+                            <input type="email" value="Вывести почту" disabled/>
+                            <input type="text" value="Вывести телефон" disabled/>
+                        </div>
+                        <div class="regWrap">
+                            <h3>Оформление заказа</h3>
+
+                            <form>
+
+                                <input type="radio" class="samovivoz" name="raz" id="samovivoz" checked/>
+                                <label for="samovivoz">
+                                    <p>самовывоз</p>
+
+                                    <p class="info">
+                                        Товар можно забрать по адресу:<br/>
+                                        Москва, ул. Ирины Левченко,дом 1<br/>
+                                        С понедельника по пятницу с 10.00 до 18.00
+                                    </p></label>
+                                <br/>
+                            </form>
+                        </div>
+                        <div class="regWrap white">
+                            <h3>Оплата:<br/><span> Безналичный расчет</span></h3>
+                            <h3>Реквизиты:<br/><span ng-bind-html="ctrl.requisits.content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span></h3>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
