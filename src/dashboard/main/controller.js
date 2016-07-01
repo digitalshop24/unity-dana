@@ -16,7 +16,7 @@ export default class MainCtrl {
             this.modal.open({
                 resolve: {
                     message: () => {
-                        return 'Во время регистрации произошла ошибка!';
+                        return 'Вы успешно подписаны';
                     }
                 }
             });

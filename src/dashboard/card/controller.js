@@ -7,12 +7,12 @@ export default class CardCtrl {
         this.cardStorage = cardStorage;
         cardStorage.goods = goods;
         this.goods = cardStorage.goods;
-        this.registration = true;
         this.requisits = requisits;
         this.modal = modal;
         this.session = session;
         this.email = this.session.user.email;
         this.phone = this.session.user.phone;
+        this.registration = !this.session.isAuthenticated;
     }
 
     createOrder() {
