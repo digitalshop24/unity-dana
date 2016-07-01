@@ -24,6 +24,7 @@ export default class RegistrationCtrl {
         this.auth.register({
             email: this.form.email,
             password: this.form.password,
+            repeat_password: this.form.password,
             legal: this.legal
         })
             .then(() => {
