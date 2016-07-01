@@ -14,6 +14,7 @@ export default class CardCtrl {
         this.phone = this.session.user.phone;
         this.registration = !this.session.isAuthenticated;
         this.legal = false;
+        this.afterOrder = false;
     }
 
     createOrder() {
@@ -41,16 +42,8 @@ export default class CardCtrl {
                 legal: this.legal,
                 registration: this.registration
             }).then(res => {
-                this.cardStorage.clear();
-                this.email = "";
-                this.phone = "";
-                this.modal.open({
-                    resolve: {
-                        message: () => {
-                            return res;
-                        }
-                    }
-                });
+                this.afterOrder = true;
+                this.orderResponse = res;
             });
         }
     }

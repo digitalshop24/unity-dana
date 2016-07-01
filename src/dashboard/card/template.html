@@ -1,5 +1,5 @@
 <div class="contentWraper cartPage container">
-    <div class="row">
+    <div class="row" ng-show="!ctrl.afterOrder">
         <div class="col-md-12">
             <div class="broad">
                 <a><span>Корзина</span></a>
@@ -12,6 +12,12 @@
                 <form ng-submit="ctrl.createOrder()">
                     <div class="col-md-8">
                         <div class="inCartWrapper" ng-show="ctrl.goods.length">
+                            <div ng-show="ctrl.afterOrder">
+                                <h2>Вы успешно оформили заказ.<br/> В ближайшее время мы с Вами свяжемся.</h2>
+                                <h3>Номер заказа: <span>3423 / 22</span></h3>
+                                <h3 ng-bind-html="ctrl.orderResponse"></h3>
+                            </div>
+
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
@@ -25,7 +31,7 @@
                                     </tr>
                                     </tbody>
                                 </table>
-                                <button type="submit" class="grayBtn">Оформить заказ</button>
+                                <button type="submit" class="grayBtn" ng-show="!ctrl.afterOrder">Оформить заказ</button>
                             </div>
                         </div>
                         <div class="inCartWrapper" ng-show="!ctrl.goods.length">
