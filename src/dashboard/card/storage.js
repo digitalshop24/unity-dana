@@ -45,13 +45,18 @@ export default class CardStorage {
         this.updateCounters();
     }
 
+    clear() {
+        this.goods.length = 0;
+        this.updateCounters();
+    }
+
     createItemsForOrder() {
-        return this.goods.map(good => {
+        return JSON.stringify(this.goods.map(good => {
             return {
                 id: good.id,
                 amount: good.amount
             }
-        });
+        }));
     }
 
     isContained(item) {

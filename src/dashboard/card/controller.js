@@ -2,22 +2,52 @@
 
 
 export default class CardCtrl {
-    constructor(cardService, cardStorage, goods, requisits) {
+    constructor(cardService, cardStorage, goods, requisits, modal) {
         this.cardService = cardService;
         this.cardStorage = cardStorage;
         cardStorage.goods = goods;
         this.goods = cardStorage.goods;
         this.registration = true;
         this.requisits = requisits;
+        this.modal = modal;
     }
 
     createOrder() {
-        this.cardService.createOrder({
-            goods_ids: this.cardStorage.createItemsForOrder(),
-            number: this.phone,
-            email: this.email,
-            registration: this.registration
-        });
+        if(this.registration && !this.pass) {
+            this.modal.open({
+                resolve: {
+                    message: () => {
+                        return "Введите пароль!";
+                    }
+                }
+            });
+        } else if(this.registration && this.pass && this.pass != this.passCheck) {
+            this.modal.open({
+                resolve: {
+                    message: () => {
+                        return "Пароли не совпадают!";
+                    }
+                }
+            });
+        } else {
+            this.cardService.createOrder({
+                goods_ids: this.cardStorage.createItemsForOrder(),
+                number: this.phone,
+                email: this.email,
+                registration: this.registration
+            }).then(res => {
+                this.cardStorage.clear();
+                this.email = "";
+                this.phone = "";
+                this.modal.open({
+                    resolve: {
+                        message: () => {
+                            return res;
+                        }
+                    }
+                });
+            });
+        }
     }
 
     removeItem(item) {
