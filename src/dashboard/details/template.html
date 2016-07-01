@@ -3,7 +3,8 @@
         <div class="col-md-12">
             <div class="broad">
                 <a><span>Продукция</span></a> /
-                <a><span ng-bind="::ctrl.item.theme"></span></a>
+                <a ui-sref="dashboard.catalog({category: ctrl.item.category_id})"><span ng-bind="::ctrl.item.category_name"></span></a> /
+                <a><span ng-bind="::ctrl.item.name"></span></a>
             </div>
             <hr class="hrDet" />
         </div>
