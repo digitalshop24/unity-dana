@@ -11,10 +11,8 @@
         <div class="col-md-12">
 		     <ul class="category" ng-repeat="category in ctrl.categories" >
 	        	<li class="title" ui-sref="dashboard.catalog({category: category.id})"> {{::category.name}} ({{::category.amount}})
-	        		<ul>
-	        			<li>Не знаю что тут будет</li>
-			            <li>Не знаю что тут будет</li>
-			            <li>Не знаю что тут будет</li>
+	        		<ul ng-show="category.categories">
+	        			<li ng-repeat="subCategory in category.categories" ui-sref="dashboard.catalog({category: subCategory.id})" ng-bind="subCategory.name">Не знаю что тут будет</li>
 	        		</ul>
 	        	</li>
 	        </ul>
