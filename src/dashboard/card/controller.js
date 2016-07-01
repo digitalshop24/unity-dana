@@ -13,6 +13,7 @@ export default class CardCtrl {
         this.email = this.session.user.email;
         this.phone = this.session.user.phone;
         this.registration = !this.session.isAuthenticated;
+        this.legal = false;
     }
 
     createOrder() {
@@ -37,6 +38,7 @@ export default class CardCtrl {
                 goods_ids: this.cardStorage.createItemsForOrder(),
                 number: this.phone,
                 email: this.email,
+                legal: this.legal,
                 registration: this.registration
             }).then(res => {
                 this.cardStorage.clear();
