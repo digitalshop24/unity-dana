@@ -2,7 +2,7 @@
 
 
 export default class CardCtrl {
-    constructor(cardService, cardStorage, goods, requisits, modal) {
+    constructor(cardService, cardStorage, goods, requisits, modal, session) {
         this.cardService = cardService;
         this.cardStorage = cardStorage;
         cardStorage.goods = goods;
@@ -10,6 +10,9 @@ export default class CardCtrl {
         this.registration = true;
         this.requisits = requisits;
         this.modal = modal;
+        this.session = session;
+        this.email = this.session.user.email;
+        this.phone = this.session.user.phone;
     }
 
     createOrder() {
