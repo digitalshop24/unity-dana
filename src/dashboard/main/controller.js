@@ -16,7 +16,7 @@ export default class MainCtrl {
             this.modal.open({
                 resolve: {
                     message: () => {
-                        return 'Вы успешно подписаны';
+                        return 'Вы успешно подписаны на рассылку!';
                     }
                 }
             });
