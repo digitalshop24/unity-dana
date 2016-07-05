@@ -4,23 +4,30 @@
             <h1>Личный кабинет</h1>
         </div>
     </div>
-    <div class="row"> <!-- ЕСЛИ ЮРИДИЧЕСКОЕ ЛИЦО -->
+    <div class="row" ng-show="ctrl.auth.session.localStorage._user.legal"> <!-- ЕСЛИ ЮРИДИЧЕСКОЕ ЛИЦО -->
+        <div class="col-md-12 text-center">
+            <p ng-bind="ctrl.success" class="color_red"></p>
+            <p ng-bind="ctrl.errorText" class="color_red"></p>
+        </div>
         <div class="col-md-offset-2 col-md-8">
             <div class="wrapperLk row">
                 <div class="col-md-6">
                     <div class="right">
                         <div class="userInfo">
-                            <br/>
-                            <input type="text" value="Имя пользователя"/>
-                            <input type="text" value="Фамилия пользователя"/>
-                            <input type="text" value="Телефон пользователя"/>
+                            <p>Изменить личные данные</p>
+                            <form name="changePas" class="authorizationForm" ng-submit="ctrl.sendEditInfo()">
+                                <input ng-model="ctrl.name_user" type="text" placeholder="Имя пользователя"/>
+                                <input ng-model="ctrl.soname_user" type="text" placeholder="Фамилия пользователя"/>
+                                <input ng-model="ctrl.phone" type="text" placeholder="Телефон пользователя"/>
+                                <button class="grayBtn">Сохранить</button>
+                            </form>
                         </div>
                         <div class="changePas">
                             <p>Изменить пароль</p>
-                            <form name="changePas" class="authorizationForm">
-                                <input type="text" placeholder="старый пароль"/>
-                                <input type="text" placeholder="новый пароль"/>
-                                <input type="text" placeholder="подтверждение"/>
+                            <form name="changePas" class="authorizationForm" ng-submit="ctrl.sendEditPass()">
+                                <input ng-model="ctrl.old_pass" type="text" placeholder="Старый пароль"/>
+                                <input ng-model="ctrl.password" type="text" placeholder="Новый пароль"/>
+                                <input ng-model="ctrl.password_confirmation" type="text" placeholder="Подтверждение"/>
                                 <button class="grayBtn">Сохранить</button>
                             </form>
                         </div>
@@ -28,16 +35,17 @@
                 </div>
                 <div class="col-md-6">
                     <div class="left">
-                        <div class="changePas">
+                        <div class="changePas left">
                             <p>Реквизиты</p>
-                            <form name="changePas" class="authorizationForm">
-                                <input type="text" placeholder="Наименование организации"/>
-                                <input type="text" placeholder="Юридический адрес"/>
-                                <input type="text" placeholder="ИНН"/>
-                                <input type="text" placeholder="ОГРН"/>
-                                <input type="text" placeholder="ОКПО"/>
-                                <input type="text" placeholder="ОКАТО"/>
-                                <textarea type="text" placeholder="Реквизиты банка" rows="1"></textarea>
+                            <form name="changePas" class="authorizationForm" ng-submit="ctrl.sendEditRec()">
+                                <input ng-model="ctrl.organization_name" type="text" placeholder="Наименование организации"/>
+                                <input ng-model="ctrl.address"  type="text" placeholder="Юридический адрес"/>
+                                <input ng-model="ctrl.inn"  type="text" placeholder="ИНН"/>
+                                <input ng-model="ctrl.ogrn"  type="text" placeholder="ОГРН"/>
+                                <input ng-model="ctrl.okpo"  type="text" placeholder="ОКПО"/>
+                                <input ng-model="ctrl.okato"  type="text" placeholder="ОКАТО"/>
+                                <textarea ng-model="ctrl.requisits" type="text" placeholder="Реквизиты банка" rows="1"></textarea>
+                                <button class="grayBtn">Сохранить</button>
                             </form>
                         </div>
                     </div>
@@ -45,30 +53,38 @@
             </div>
         </div>
     </div>
-    <div class="row"> <!-- ЕСЛИ ФИЗИЧЕСКОЕ ЛИЦО -->
+    <div class="row" ng-show="!ctrl.auth.session.localStorage._user.legal"> <!-- ЕСЛИ ФИЗИЧЕСКОЕ ЛИЦО -->
+        <div class="col-md-12 text-center">
+            <p ng-bind="ctrl.success" class="color_red"></p>
+            <p ng-bind="ctrl.errorText" class="color_red"></p>
+        </div>
         <div class="col-md-offset-2 col-md-8">
             <div class="wrapperLk">
                 <div class="col-md-6 ">
                     <div class="userInfo right">
-                        <br/>
-                        <input type="text" value="Имя пользователя"/>
-                        <input type="text" value="Фамилия пользователя"/>
-                        <input type="text" value="Телефон пользователя"/>
+                        <p>Изменить личные данные</p>
+                        <form name="changePas" class="authorizationForm" ng-submit="ctrl.sendEditInfo()">
+                                <input ng-model="ctrl.name_user" type="text" placeholder="Имя пользователя"/>
+                                <input ng-model="ctrl.soname_user" type="text" placeholder="Фамилия пользователя"/>
+                                <input ng-model="ctrl.phone" type="text" placeholder="Телефон пользователя"/>
+                                <button class="grayBtn">Сохранить</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="changePas left">
-                        <p>Изменить пароль</p>
-                        <form name="changePas" class="authorizationForm">
-                            <input type="text" placeholder="старый пароль"/>
-                            <input type="text" placeholder="новый пароль"/>
-                            <input type="text" placeholder="подтверждение"/>
-                            <button class="grayBtn">Сохранить</button>
-                        </form>
+                            <p>Изменить пароль</p>
+                            <form name="changePas" class="authorizationForm" ng-submit="ctrl.sendEditPass()">
+                                <input ng-model="ctrl.old_pass" type="text" placeholder="Старый пароль"/>
+                                <input ng-model="ctrl.password" type="text" placeholder="Новый пароль"/>
+                                <input ng-model="ctrl.password_confirmation" type="text" placeholder="Подтверждение"/>
+                                <button class="grayBtn">Сохранить</button>
+                            </form>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <div class="row">

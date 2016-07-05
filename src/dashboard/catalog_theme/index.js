@@ -1,17 +1,17 @@
 'use strict';
 
 import angular from 'angular';
-import CatalogCtrl from './controller.js';
-import CatalogService from './service.js';
+import CatalogThemeCtrl from './controller.js';
+import CatalogThemeService from './service.js';
 
-export default angular.module('dashboard.catalog', [])
-    .service('catalogService', CatalogService)
+export default angular.module('dashboard.catalog_theme', [])
+    .service('catalogThemeService', CatalogThemeService)
     .config(function ($stateProvider) {
         $stateProvider
-            .state('dashboard.catalog', {
+            .state('dashboard.catalog_theme', {
                 template: require('./template.html'),
-                url: '/catalog?category=',
-                controller: CatalogCtrl,
+                url: '/catalog?theme=',
+                controller: CatalogThemeCtrl,
                 controllerAs: 'ctrl',
                 params: {
                     page: 1,
@@ -21,7 +21,7 @@ export default angular.module('dashboard.catalog', [])
                 },
                 resolve: {
                     items: (goodsService, $stateParams) => {
-                        return goodsService.get($stateParams.page, $stateParams.perPage, $stateParams.sort, $stateParams.desc, $stateParams.category);
+                        return goodsService.getTheme($stateParams.page, $stateParams.perPage, $stateParams.sort, $stateParams.desc, $stateParams.theme);
                     },
 
                     page: $stateParams => {

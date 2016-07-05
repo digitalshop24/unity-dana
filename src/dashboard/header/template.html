@@ -27,7 +27,14 @@
             <div id="navbar" class="navbar-collapse halfNav vv collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a ui-sref="dashboard.categories">Тематика</a></li>
-                    <li><a ui-sref="dashboard.catalog">Продукция</a></li>
+                    <li><a ui-sref="dashboard.catalog" ng-mouseover="ctrl.menuProduct = true;" ng-mouseleave="ctrl.menuProduct = false;">Продукция</a></li>
+                    <div ng-mouseover="ctrl.menuProduct = true;" ng-mouseleave="ctrl.menuProduct = false;" ng-show="ctrl.menuProduct" class="menuProduct_css">
+                        <ul>
+                            <li><a href="" ui-sref="dashboard.catalog_theme({theme: 1})">Электронные учебники</a></li>
+                            <li><a href="" ui-sref="dashboard.catalog_theme({theme: 2})">Книги ЮНИТИ</a></li>
+                        </ul>
+                    </div>
+
                     <li><a ui-sref="dashboard.post({url:'info'})">Информация</a></li>
                     <li><a ui-sref="dashboard.post({url:'about-us'})">Об издательстве</a></li>
                     <li>
@@ -47,3 +54,4 @@
         </div>
     </nav>
 </header>
+

@@ -60,6 +60,9 @@ ul li {
   font-weight: normal;
 }
 
+.color_red {
+  color: red;
+}
 .contentWraper {
   margin-top: 160px;
 }
@@ -1005,4 +1008,16 @@ footer {
 }
 
 @media only screen and (min-width: 1450px) {
+  
+}
+
+
+.menuProduct_css {
+  position: absolute;
+  background-color: #fff;
+  padding: 10px 30px;
+  margin-top: 50px;
+  margin-left: 80px;
+  border: 1px solid $main;
+  
 }

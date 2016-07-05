@@ -8,6 +8,7 @@ export default class AuthService {
         this.api = api;
         this.session = session;
         this.$rootScope = $rootScope;
+
     }
 
     register(credentials) {
@@ -18,6 +19,24 @@ export default class AuthService {
             throw response.data;
         });
     }
+
+    editPassword(credentials) {
+        return this.api.put('/users/password/change', credentials).then(response => {
+            this.initSession(response);
+            return this.session;
+        }).catch(response => {
+            throw response.data;
+        });
+    }
+
+    editInfo(credentials) {
+        return this.api.put('/users/edit', credentials).then(response => {
+            return this.session;
+        }).catch(response => {
+            throw response.data;
+        });
+    }
+    
 
     login(credentials) {
         return this.api.post('/users/sign_in', credentials).then(response => {

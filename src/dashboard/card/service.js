@@ -3,7 +3,7 @@
 export default class CardService {
     constructor(api) {
         this.api = api;
-    }
+    } 
 
     createOrder(data) {
         return this.api.post('/orders', data).then((res) => {

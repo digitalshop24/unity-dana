@@ -26,7 +26,7 @@ import bottomNavBar from './bottom-navbar/index.js';
 import headerScroll from './header/scroll.js';
 import Modal from './modal/index';
 import thx from './thx/index';
-
+import catalog_theme from './catalog_theme/index.js';
 
 
 
@@ -37,6 +37,7 @@ export default angular.module('dashboard',
         card.name,
         profile.name,
         catalog.name,
+        catalog_theme.name,
         price.name,
         recover.name,
         news.name,

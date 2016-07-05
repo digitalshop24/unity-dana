@@ -1,7 +1,7 @@
 'use strict';
 
 
-export default class CatalogCtrl {
+export default class CatalogThemeCtrl {
     constructor(items, page, perPage, goodsService, sort, desc, category, $stateParams) {
         this.items = items;
         this.page = page;

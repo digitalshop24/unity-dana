@@ -7,6 +7,7 @@ export default class HeaderCtrl {
         this.session = session;
         this.auth = auth;
         this.$state = $state;
+        this.menuProduct = false;
     }
 
     openLoginPopup() {

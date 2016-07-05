@@ -18,6 +18,21 @@ export default class GoodsService {
             return res.data;
         })
     }
+    getTheme(page, perPage, sort, desc, theme) {
+        console.log(theme);
+        return this.api.get('/goods', {
+            params: {
+                page: page,
+                per_page: perPage,
+                sort: sort,
+                desc: desc,
+                theme: theme
+            }
+        }).then((res) => {
+            console.log(res.data);
+            return res.data;
+        })
+    }
 
     getInfo(ids) {
         return this.api.get('/goods/descriptions', {
