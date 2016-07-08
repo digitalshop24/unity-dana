@@ -23,6 +23,7 @@ export default class AuthService {
     editPassword(credentials) {
         return this.api.put('/users/password/change', credentials).then(response => {
             this.initSession(response);
+            console.log('auth',this.session);
             return this.session;
         }).catch(response => {
             throw response.data;
@@ -31,6 +32,7 @@ export default class AuthService {
 
     editInfo(credentials) {
         return this.api.put('/users/edit', credentials).then(response => {
+            this.session.user = Object.assign(this.session.user, response.data.user);
             return this.session;
         }).catch(response => {
             throw response.data;
@@ -41,6 +43,15 @@ export default class AuthService {
     login(credentials) {
         return this.api.post('/users/sign_in', credentials).then(response => {
             this.initSession(response);
+            return this.session;
+        }).catch(response => {
+            throw response.data;
+        });
+    }
+
+    recoverPass(credentials) {
+        return this.api.post('/users/password', credentials).then(response => {
+            console.log(response)
             return this.session;
         }).catch(response => {
             throw response.data;

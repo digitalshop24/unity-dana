@@ -1,9 +1,9 @@
 <div class="contentWraper container cataloguePage detail">
     <div class="row text-center pricePg">
-        <div class="col-md-12 ">
-            <h1>Прайс</h1>
-            <p ng-bind="ctrl.price.updated_at | amDateFormat:'DD.MM.YYYY'"> </p>
-            <a href="{{ctrl.price.file}}" download="price">
+        <div class="col-md-6 " ng-repeat="p in ctrl.price">
+            <h1>Прайс № {{$index+1}}</h1>
+            <p ng-bind="p.updated_at | amDateFormat:'DD.MM.YYYY'"> </p>
+            <a href="{{p.file}}" download="price">
                 <img src="img/resources/img/doc.png" alt="doc" name="doc" />
                 <p>скачать</p>
             </a>

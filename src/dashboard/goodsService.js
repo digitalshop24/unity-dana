@@ -19,7 +19,6 @@ export default class GoodsService {
         })
     }
     getTheme(page, perPage, sort, desc, theme) {
-        console.log(theme);
         return this.api.get('/goods', {
             params: {
                 page: page,
@@ -77,4 +76,11 @@ export default class GoodsService {
             return res.data;
         })
     }
+
+    getHistoryGoods() {
+        return this.api.get('/orders').then((res) => {
+            return res.data;
+        })
+    }
+
 }

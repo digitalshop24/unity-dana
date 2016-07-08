@@ -2,27 +2,28 @@
 
 
 export default class ProfileCtrl {
-    constructor(auth, $rootScope, $state) {
+    constructor(auth, $rootScope, $state, historyGoods) {
     	this.auth = auth;
+        console.log(this.auth); 
         this.rootscope = $rootScope;
         this.state = $state;
         this.success = "";
+        this.history = historyGoods;
 
 		this.old_pass = "";
 		this.password = "";
 		this.password_confirmation = "";
 
-        this.name_user = "";
-        this.last_name = "";
-        this.phone = "";
-
-        this.organization_name ="";
-        this.inn = "";
-        this.ogrn ="";
-        this.okpo ="";
-        this.okato ="";
-        this.requisits ="";
-        this.address = "";
+        this.name_user = this.auth.session.localStorage._user.name;
+        this.last_name = this.auth.session.localStorage._user.last_name;
+        this.phone = this.auth.session.localStorage._user.phone;
+        this.organization_name =this.auth.session.localStorage._user.organization_name;
+        this.inn = this.auth.session.localStorage._user.inn;
+        this.ogrn =this.auth.session.localStorage._user.ogrn;
+        this.okpo =this.auth.session.localStorage._user.okpo;
+        this.okato =this.auth.session.localStorage._user.okato;
+        this.requisits =this.auth.session.localStorage._user.requisits;
+        this.address = this.auth.session.localStorage._user.address;
     }
 
 
@@ -38,6 +39,7 @@ export default class ProfileCtrl {
         })
             .then(() => {
                 this.success = "Успешно сменили пароль";
+                // this.state.go('dashboard.main', {}, {reload: true});
 
             }).catch((err) => {
                 this.errorText = err.ru || "Произошла ошибка";

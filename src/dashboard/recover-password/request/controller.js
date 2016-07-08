@@ -15,9 +15,8 @@ export default class LoginCtrl {
     }
 
     send() {
-        this.auth.login({
+        this.auth.recoverPass({
             email: this.form.email,
-            password: this.form.password
         })
             .then(() => {
                 this.handleSuccessAuth();

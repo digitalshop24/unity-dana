@@ -17,7 +17,7 @@
                             <p>Изменить личные данные</p>
                             <form name="changePas" class="authorizationForm" ng-submit="ctrl.sendEditInfo()">
                                 <input ng-model="ctrl.name_user" type="text" placeholder="Имя пользователя"/>
-                                <input ng-model="ctrl.soname_user" type="text" placeholder="Фамилия пользователя"/>
+                                <input ng-model="ctrl.last_name" type="text" placeholder="Фамилия пользователя"/>
                                 <input ng-model="ctrl.phone" type="text" placeholder="Телефон пользователя"/>
                                 <button class="grayBtn">Сохранить</button>
                             </form>
@@ -64,9 +64,9 @@
                     <div class="userInfo right">
                         <p>Изменить личные данные</p>
                         <form name="changePas" class="authorizationForm" ng-submit="ctrl.sendEditInfo()">
-                                <input ng-model="ctrl.name_user" type="text" placeholder="Имя пользователя"/>
-                                <input ng-model="ctrl.soname_user" type="text" placeholder="Фамилия пользователя"/>
-                                <input ng-model="ctrl.phone" type="text" placeholder="Телефон пользователя"/>
+                                <input ng-model="ctrl.name_user" type="text" placeholder="Имя пользователя" ng-value="ctrl.name_user">
+                                <input ng-model="ctrl.last_name" type="text" placeholder="Фамилия пользователя" value="">
+                                <input ng-model="ctrl.phone" type="text" placeholder="Телефон пользователя" ng-value="ctrl.phone">
                                 <button class="grayBtn">Сохранить</button>
                         </form>
                     </div>
@@ -90,42 +90,24 @@
     <div class="row">
         <div class="col-md-offset-2 col-md-8">
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" ng-repeat="items in ctrl.history">
                     <thead>
                     <tr>
-                        <td>Заказ № 969288 от 1.04.20126</td>
+                        <td>Заказ № {{items.id}} </td>
                         <td></td>
                         <td></td>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")
+                    <tr ng-repeat="item in items.goods_ids">
+                        <td ng-bind="item.good_id">Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. 
                         </td>
-                        <td>99 шт.</td>
+                        <td ng-bind="item.amount">99 шт.</td>
                         <td>12000 р.</td>
                     </tr>
                     </tbody>
                 </table>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <td>Заказ № 969288 от 1.04.20126</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. (Серия
-                            "Золотой фонд российских учебников")
-                        </td>
-                        <td>99 шт.</td>
-                        <td>12000 р.</td>
-                    </tr>
-                    </tbody>
-                </table>
+                
             </div>
         </div>
     </div>

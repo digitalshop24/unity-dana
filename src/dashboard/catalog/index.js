@@ -40,10 +40,6 @@ export default angular.module('dashboard.catalog', [])
                         return $stateParams.category;
                     },
 
-                    theme: $stateParams => {
-                        return $stateParams.theme;
-                    },
-
                     desc: $stateParams => {
                         return $stateParams.desc;
                     }

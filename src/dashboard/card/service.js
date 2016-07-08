@@ -10,6 +10,11 @@ export default class CardService {
             return res.data;
         })
     }
+    getOrder(data) {
+        return this.api.post('/orders', data).then((res) => {
+            return res.data;
+        })
+    }
 
     getRequisits() {
         return this.api.get('/requisits').then((res) => {

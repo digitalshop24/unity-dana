@@ -13,6 +13,9 @@ export default angular.module('dashboard.profile', [
                 controller: ProfileCtrl,
                 controllerAs: 'ctrl',
                 resolve: {
+                    historyGoods: goodsService => {
+                        return goodsService.getHistoryGoods();
+                    }
                 }
             });
     });

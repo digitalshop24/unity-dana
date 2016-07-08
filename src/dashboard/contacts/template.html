@@ -9,17 +9,23 @@
     </div>
     <div class="row">
         <div class="col-md-offset-1 col-md-4">
-            <div class="feedbackWrap">
+            <div class="feedbackWrap" ng-show="ctrl.sendMessege">
                 <p>Обратная связь</p>
-                <form>
-                    <input type="text" name="" placeholder="Ваше имя" />
-                    <input type="text" name="" placeholder="Ваш телефон" />
-                    <input type="email" name="" placeholder="Ваша почта" />
-                    <textarea placeholder="Ваше сообщение"></textarea>
+                <form ng-submit="ctrl.sendContact()">
+                    <input ng-model="ctrl.name" type="text" name="" placeholder="Ваше имя" />
+                    <input ng-model="ctrl.phone" type="text" name="" placeholder="Ваш телефон" />
+                    <input ng-model="ctrl.email" type="email" name="" placeholder="Ваша почта" />
+                    <textarea ng-model="ctrl.message" placeholder="Ваше сообщение"></textarea>
                     <button class="mainBtn">Отправить</button>
                     </textarea>
                 </form>
             </div>
+            <div ng-show="!ctrl.sendMessege">
+                <h3 > Спасибо!</h3>
+                <p>Ваше сообщение, успешно отправлено. <br> Мы свяжемся с вами в ближайшее время</p>
+                
+            </div>
+            
         </div>
         <div class="col-md-offset-1 col-md-5">
             <br/><br/>

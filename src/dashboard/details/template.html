@@ -3,7 +3,7 @@
         <div class="col-md-12">
             <div class="broad">
                 <a><span>Продукция</span></a> /
-                <a ng-show="ctrl.item.supercategory_name" ui-sref="dashboard.catalog({category: ctrl.item.supercategory_id})"><span ng-bind="::ctrl.item.supercategory_name"></span></a> /
+                <a ng-show="ctrl.item.supercategory_name" ui-sref="dashboard.catalog({category: ctrl.item.supercategory_id})"><span ng-bind="::ctrl.item.supercategory_name"></span></a> <span ng-show="ctrl.item.supercategory_name">/</span>
                 <a ui-sref="dashboard.catalog({category: ctrl.item.category_id})"><span ng-bind="::ctrl.item.category_name"></span></a> /
                 <a><span ng-bind="::ctrl.item.name"></span></a>
             </div>
@@ -17,7 +17,7 @@
                      style="background-image: url('{{ctrl.item.image_url}}');">
                 </div>
             </a>
-            <ul class="pdfParth text-center">
+            <!-- <ul class="pdfParth text-center">
                 <a href="">
                     <li>купить PDF версию</li>
                     <li><img src="/img/resources/img/pdf.png" alt="pdf" title="pdf"/></li>
@@ -25,7 +25,7 @@
                 <a href="" class="dop">
                     <li>Дополнительные материалы к книге</li>
                 </a>
-            </ul>
+            </ul> -->
 
         </div>
         <div class="col-md-7">

@@ -10,7 +10,7 @@ export default angular.module('dashboard.catalog_theme', [])
         $stateProvider
             .state('dashboard.catalog_theme', {
                 template: require('./template.html'),
-                url: '/catalog?theme=',
+                url: '/catalog_theme?theme=',
                 controller: CatalogThemeCtrl,
                 controllerAs: 'ctrl',
                 params: {
@@ -34,10 +34,6 @@ export default angular.module('dashboard.catalog_theme', [])
 
                     sort: $stateParams => {
                         return $stateParams.sort;
-                    },
-
-                    category: $stateParams => {
-                        return $stateParams.category;
                     },
 
                     theme: $stateParams => {

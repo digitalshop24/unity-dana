@@ -12,9 +12,9 @@
         <div class="col-md-12">
             <div class="mixing">
                 <ul>
-                    <li ng-class="{'active' : ctrl.sort == 'popularity'}" ng-click="ctrl.sortBy('popularity')">по популярности</li>
-                    <li ng-class="{'active' : ctrl.sort == 'price'}" ng-click="ctrl.sortBy('price')">по цене</li>
-                    <li ng-class="{'active' : ctrl.sort == 'date'}" ng-click="ctrl.sortBy('date')">по новизне</li>
+                    <li ng-class="{'active' : ctrl.sort == 'popularity'}" ng-click="ctrl.sortByTheme('popularity')">по популярности</li>
+                    <li ng-class="{'active' : ctrl.sort == 'price'}" ng-click="ctrl.sortByTheme('price')">по цене</li>
+                    <li ng-class="{'active' : ctrl.sort == 'date'}" ng-click="ctrl.sortByTheme('date')">по новизне</li>
                 </ul>
             </div>
         </div>
@@ -26,7 +26,8 @@
             <figure class="newProduct">
                 <a  ui-sref="dashboard.details({id: item.id})">
                     <div class="bgWrap" ng-class="{v2:item.type === 'v2'}">
-                        <div class="bg" style="background-image:url('{{item.image_url}}');"></div>
+                        <div class="bg" 
+                        style="background-image:url('{{item.image_url}}'); {{ctrl.height}}"></div>
                     </div>
                     <figcaption>
                         <p ng-bind="::item.name"></p>
@@ -41,7 +42,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="LoadMoreBtns">
-                <button ng-hide="ctrl.hideDownloadButton" ng-click="ctrl.loadMore()">Загрузить ещё</button>
+                <button ng-hide="ctrl.hideDownloadButton" ng-click="ctrl.loadMoreTheme()">Загрузить ещё</button>
                 <a href="#top" class="mainBtn">Вернуться наверх</a>
             </div>
         </div>

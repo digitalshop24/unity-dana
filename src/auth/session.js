@@ -6,6 +6,7 @@ export default class Session {
     constructor($cookies, localStorage) {
         this.cookies = $cookies;
         this.localStorage = localStorage;
+        
     }
 
     cleanupCookies() {
