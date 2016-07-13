@@ -27,6 +27,8 @@ import headerScroll from './header/scroll.js';
 import Modal from './modal/index';
 import thx from './thx/index';
 import catalog_theme from './catalog_theme/index.js';
+import catalog_status from './catalog_status/index.js';
+import update from './update/index';
 
 
 
@@ -49,7 +51,9 @@ export default angular.module('dashboard',
         categories.name,
         post.name,
         buyButton.name,
-        thx.name
+        thx.name,
+        catalog_status.name,
+        update.name
     ])
     .service('goodsService', GoodsService)
     .service('newsService', NewsService)

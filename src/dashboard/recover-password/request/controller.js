@@ -21,16 +21,14 @@ export default class LoginCtrl {
             .then(() => {
                 this.handleSuccessAuth();
             }).catch((err) => {
-                $('#password').css('border-color', 'red');
-                this.form.password = undefined;
-                this.errorText = err.message || "Произошла ошибка авторизации";
+                this.errorText = err.message || "Произошла ошибка";
             });
     }
 
     handleSuccessAuth() {
         this.form = {};
         this.close();
-        this.state.go(this.state.current, {}, {reload: true});
+        this.state.go('dashboard.recover.page', {}, {reload: true});
     }
 
 

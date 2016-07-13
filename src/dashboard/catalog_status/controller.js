@@ -1,7 +1,7 @@
 'use strict';
 
 
-export default class CatalogThemeCtrl {
+export default class CatalogStatusCtrl {
     constructor(items, page, perPage, goodsService, sort, desc, theme, $stateParams) {
         this.items = items;
         this.page = page;
@@ -12,7 +12,7 @@ export default class CatalogThemeCtrl {
         this.theme = theme;
         // this.categoryName = this.items.length ? this.items[0].category_name : '';
         this.state = $stateParams;
-        if (this.state.theme == '1') this.style = "height: 150px; background-size: 100%; background-repeat: no-repeat;";
+        if (this.state.theme == '1') this.height = "height: 150px;";
         console.log(this.state);
         
     }

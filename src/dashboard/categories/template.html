@@ -10,11 +10,11 @@
 	<div class="row">
         <div class="col-md-12">
 		     <ul class="category" ng-repeat="category in ctrl.categories" >
-	        	<li class="title" ui-sref="dashboard.catalog({category: category.id})"> {{::category.name}} ({{::category.amount}})
+	        	<a href=""><li class="title" ui-sref="dashboard.catalog({category: category.id})"> {{::category.name}} ({{::category.amount}})
 	        		<ul ng-show="category.categories">
-	        			<li ng-repeat="subCategory in category.categories" ui-sref="dashboard.catalog({category: subCategory.id})" ng-bind="subCategory.name">Не знаю что тут будет</li>
+	        			<a href=""><li ng-repeat="subCategory in category.categories" ui-sref="dashboard.catalog({category: subCategory.id})" ng-bind="subCategory.name"></li></a>
 	        		</ul>
-	        	</li>
+	        	</li></a>
 	        </ul>
         </div>
     </div>

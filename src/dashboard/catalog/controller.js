@@ -12,7 +12,6 @@ export default class CatalogCtrl {
         this.category = category;
         this.categoryName = this.items.length ? this.items[0].category_name : '';
         this.state = $stateParams;
-        
     }
 
     loadMore() {
@@ -30,5 +29,7 @@ export default class CatalogCtrl {
             this.items = res;
         });
     }
+
+ 
 
 }

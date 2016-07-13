@@ -38,6 +38,14 @@ export default class AuthService {
             throw response.data;
         });
     }
+
+    sendNewPass(credentials) {
+        return this.api.post('/users/password/reset', credentials).then(response => {
+            return this.session;
+        }).catch(response => {
+            throw response.data;
+        });
+    }
     
 
     login(credentials) {
@@ -75,6 +83,19 @@ export default class AuthService {
         }).catch(response => {
             throw response.data.error;
         });
+    }
+
+    updateSetting() {
+        return this.api.get('/settings/parse').then((res) => {
+            console.log(res);
+            return res.data;
+        })
+    }
+    sendPrice() {
+        return this.api.get('/settings/delivery').then((res) => {
+            console.log(res);
+            return res.data;
+        })
     }
 }
 

@@ -32,6 +32,7 @@ export default class GoodsService {
             return res.data;
         })
     }
+    
 
     getInfo(ids) {
         return this.api.get('/goods/descriptions', {
@@ -82,5 +83,7 @@ export default class GoodsService {
             return res.data;
         })
     }
+
+    
 
 }

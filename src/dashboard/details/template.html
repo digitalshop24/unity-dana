@@ -37,7 +37,7 @@
                 {{::ctrl.item.pages_amount}} стр., {{::ctrl.item.printed_amount}} экз. <br/>
                 {{::ctrl.item.height}}x{{::ctrl.item.width}}/{{::ctrl.item.length}}
             </p>
-
+            <p ng-bind-html="ctrl.item.description"></p>
             <p ng-bind-html="ctrl.item.content"></p>
 
             <p class="price">
@@ -45,6 +45,25 @@
             </p>
             <div buy-button item="ctrl.item"></div>
 
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-3" ng-show="ctrl.item.niion">
+            <p>Классификатор NIION</p>
+            <p ng-bind="ctrl.item.niion"></p>
+        </div>
+        <div class="col-md-3" ng-show="ctrl.item.periodicity">
+            <p>Переодичность</p>
+            <p ng-bind="ctrl.item.periodicity"></p>
+        </div>
+        <div class="col-md-3" ng-show="ctrl.item.specialization">
+            <p>Специализация</p>
+            <p ng-bind="ctrl.item.specialization"></p>
+        </div>
+        <div class="col-md-3" ng-show="ctrl.item.profile">
+            <p>Профиль журнала</p>
+            <p ng-bind="ctrl.item.profile"></p>
         </div>
     </div>
 </div>

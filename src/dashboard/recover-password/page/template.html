@@ -5,14 +5,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-offset-3 col-md-6">
+        <div class="col-md-12 text-center">
             <div class="feedbackWrap restorePas">
-                <form class="">
-                    <input type="text" name="" class="" placeholder="Новый пароль" />
-                    <input type="text" name="" class="" placeholder="Подтверждение пароля" />
+                <h3 class="text-center" ng-bind="ctrl.errorText" style="color: red;"></h3>
+                <form class="rec_pass" ng-submit="ctrl.sendPass()">
+                    <input required="required" type="text" name="" ng-model="ctrl.token" class="" placeholder="Код подтверждения" />
+                    <input required="required" type="text" name="" ng-model="ctrl.newPass" class="" placeholder="Новый пароль" />
+                    <input required="required" type="text" name="" ng-model="ctrl.newPassTwo" class="" placeholder="Подтверждение" />
                     <button class="mainBtn">Изменить</button>
                 </form>
-                <h3 class="text-center hidden ">Ваш пароль изменен.</h3>
+                
             </div>
         </div>
     </div>
