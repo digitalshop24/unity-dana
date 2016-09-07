@@ -59,7 +59,13 @@ ul li {
   font-style: normal;
   font-weight: normal;
 }
-
+@font-face {
+  font-family: "HelveticaRegular";
+  src: url("fonts/HelveticaRegular/HelveticaRegular.eot");
+  src: url("fonts/HelveticaRegular/HelveticaRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaRegular/HelveticaRegular.woff") format("woff"), url("../fonts/HelveticaRegular/HelveticaRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
 .color_red {
   color: red;
 }
@@ -218,6 +224,7 @@ nav {
 }
 
 .newProduct {
+  height:auto !important;
   a {
     .bgWrap {
       margin: 20px auto;
@@ -451,6 +458,17 @@ footer {
     }
   }
 }
+// .cataloguePage {
+//   .category {
+//     li {
+//       &.tilte {
+//         a {
+//           border:1px solid #000;
+//         }
+//       }
+//     }
+//   }
+// }
 
 .cataloguePage.detail {
   .bgDetailImg {
@@ -978,14 +996,29 @@ footer {
     padding: 0;
     .gir {
       font-weight: 600;
+      background-color: #f7f7f7;
+      border-bottom:1px solid #9bded6;
+      padding:3px;
+      display: block;
+      font-family:HelveticaRegular;
     }
     li {
       font-size: 14px;
       padding: 0px 15px;
     }
+    ul {
+        a {
+          padding:3px 0;
+          display: block;
+        }
+    }
   }
 }
-
+.catWrap {
+  max-width:800px;
+  margin: auto;
+  border-top:4px solid #a5c94b;
+}
 .selectType {
   display: flex;
   justify-content: center;
