@@ -4,16 +4,15 @@
 export default class ProfileCtrl {
     constructor(auth, $rootScope, $state, historyGoods) {
     	this.auth = auth;
-        console.log(this.auth); 
         this.rootscope = $rootScope;
         this.state = $state;
         this.success = "";
         this.history = historyGoods;
 
-		this.old_pass = "";
+        this.old_pass = "";
 		this.password = "";
 		this.password_confirmation = "";
-
+        
         this.name_user = this.auth.session.localStorage._user.name;
         this.last_name = this.auth.session.localStorage._user.last_name;
         this.phone = this.auth.session.localStorage._user.phone;

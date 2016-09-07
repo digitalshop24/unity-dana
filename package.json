@@ -11,10 +11,12 @@
   "author": "Skoda",
   "license": "Proprietary",
   "devDependencies": {
+    "angular-animate": "^1.5.8",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-sass-bulk-import": "^1.0.1",
-    "gulp-watch": "^4.3.5"
+    "gulp-watch": "^4.3.5",
+    "v-accordion": "^1.6.0"
   },
   "dependencies": {
     "angular-youtube-embed": "^1.1.1",

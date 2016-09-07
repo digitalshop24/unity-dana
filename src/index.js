@@ -21,6 +21,10 @@ export default angular.module('app',
         'ngStorage',
         'infinite-scroll',
         'yaMap',
+        'ng',
+        'ui.router.title',
+        'vAccordion',
+        'ngAnimate',
         localStorage.name,
         dashboard.name
     ])

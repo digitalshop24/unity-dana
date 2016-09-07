@@ -19,7 +19,11 @@ export default angular.module('dashboard.post', [])
                 resolve: {
                     post: (newsService,$stateParams) => {
                         return newsService.get($stateParams.page, $stateParams.perPage, $stateParams.category, $stateParams.url);
-                    }
+                    },
+                    
+                    $title: ['post', function(post) {
+                        return post[0].title;
+                    }]
                 }
             });
     });

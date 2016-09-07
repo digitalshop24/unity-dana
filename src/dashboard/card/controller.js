@@ -2,12 +2,12 @@
 
 
 export default class CardCtrl {
-    constructor(cardService, cardStorage, goods, requisits, modal, session) {
-        this.cardService = cardService;
+    constructor(cardService, cardStorage, $sce, $rootScope, goods, requisits, modal, session, $state) {
+        this.cardService = cardService; 
         this.cardStorage = cardStorage;
+        this.sce = $sce;
         cardStorage.goods = goods;
         this.goods = cardStorage.goods;
-        this.requisits = requisits;
         this.modal = modal;
         this.session = session;
         this.email = this.session.user.email;
@@ -15,6 +15,9 @@ export default class CardCtrl {
         this.registration = !this.session.isAuthenticated;
         this.legal = false;
         this.afterOrder = false;
+        this.state = $state;
+        this.requisits = requisits;
+        this.req_content = this.sce.trustAsHtml(this.requisits.content);
     }
 
     createOrder() {
@@ -45,6 +48,9 @@ export default class CardCtrl {
                 this.afterOrder = true;
                 this.orderResponse = res;
             });
+            this.cardStorage.clear();
+            this.state.go('dashboard.thx');
+
         }
     }
 

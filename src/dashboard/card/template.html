@@ -9,23 +9,23 @@
     <div class="row cartWrap">
         <div class="col-md-12">
             <div class="row">
-                <form ng-submit="ctrl.createOrder()">
+                <form ng-submit="ctrl.createOrder();">
                     <div class="col-md-8">
                         <div class="inCartWrapper" ng-show="ctrl.goods.length">
                             <div ng-show="ctrl.afterOrder">
                                 <h2>Вы успешно оформили заказ.<br/> В ближайшее время мы с Вами свяжемся.</h2>
-                                <h3>Номер заказа: <span>3423 / 22</span></h3>
-                                <h3 ng-bind-html="ctrl.orderResponse"></h3>
+                                <!-- <h3>Номер заказа: <span>3423 / 22</span></h3> -->
+                                <!-- <h3 ng-bind-html="ctrl.orderResponse"></h3> -->
                             </div>
 
-                            <div class="table-responsive">
+                            <div class="table-responsive" >
                                 <table class="table">
                                     <tbody>
                                     <tr ng-repeat="item in ctrl.goods">
                                         <td ng-bind="::item.name"></td>
-                                        <td><spin item="item" callback="ctrl.callback()"/></td>
+                                        <td ng-show="!ctrl.afterOrder"><spin item="item" callback="ctrl.callback()"/></td>
                                         <td ng-bind="::item.price + ' р.'"></td>
-                                        <td ng-click="ctrl.removeItem(item)">
+                                        <td  ng-show="!ctrl.afterOrder" ng-click="ctrl.removeItem(item)" >
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </td>
                                     </tr>
@@ -43,8 +43,6 @@
                     <div class="col-md-4">
                         <div class="regWrap">
                             <h3>Итого: {{ctrl.cardStorage.resultPrice}} <i class="fa fa-rub"></i> </h3>
-
-
 
                             <input type="email" ng-model="ctrl.email" placeholder="Эл. Почта" required/>
                             <input type="text" ng-model="ctrl.phone" placeholder="Телефон" required/>
@@ -91,7 +89,7 @@
                         </div>
                         <div class="regWrap white">
                             <h3>Оплата:<br/><span> Безналичный расчет</span></h3>
-                            <h3>Реквизиты:<br/><span ng-bind-html="ctrl.requisits.content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            <h3>Реквизиты:<br/><span ng-bind-html="ctrl.req_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span></h3>
                         </div>
                     </div>

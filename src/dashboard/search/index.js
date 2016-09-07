@@ -15,7 +15,8 @@ export default angular.module('dashboard.search', [
                 resolve: {
                     items: (goodsService, $stateParams) => {
                         return goodsService.search($stateParams.q);
-                    }
+                    },
+                    $title: () => { return 'Поиск'; },
                 }
             });
     });

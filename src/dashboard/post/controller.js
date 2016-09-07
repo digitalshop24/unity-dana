@@ -7,8 +7,7 @@ export default class PostCtrl {
         this.sce = $sce;
         this.title = this.sce.trustAsHtml(this.post.title);
         this.body = this.sce.trustAsHtml(this.post.body);
-        console.log(this.title);
-        console.log(this.body);
-    }
+
+    } 
 
 }

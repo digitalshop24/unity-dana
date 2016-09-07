@@ -9,7 +9,7 @@ export default angular.module('dashboard.categories', [
     .service('categoriesService', CategoriesService)
     .config(function ($stateProvider) {
         $stateProvider
-            .state('dashboard.categories', {
+            .state('dashboard.header', {
                 template: require('./template.html'),
                 url: '/categories',
                 controller: CategoriesCtrl,
@@ -21,9 +21,7 @@ export default angular.module('dashboard.categories', [
 
                     newGoods: goodsService => {
                         return goodsService.getNewGoods();
-                    },
-
-                    $title: () => { return 'Категории'; },
+                    }
                 }
             });
     });

@@ -5,7 +5,7 @@
                 <li class="line" ng-show="!ctrl.session.isAuthenticated"><a ng-click="ctrl.openLoginPopup()">Вход</a></li>
                 <li class="line" ng-show="ctrl.session.isAuthenticated"><a ui-sref="dashboard.profile" >Кабинет</a></li>
                 <li class="line" ng-show="ctrl.session.isAuthenticated"><a ng-click="ctrl.logout()" >Выход</a></li>
-                <li><a ui-sref="dashboard.contacts">Контакты</a></li>
+                <!-- <li><a ui-sref="dashboard.contacts">Контакты</a></li> -->
                 <li class="cartWrap"><a ui-sref="dashboard.card"><img src="img/resources/img/cart.png" class="cart" alt="cart" name="cart"/> {{ctrl.cardStorage.itemsAmount}} товаров
                     <strong>{{ctrl.cardStorage.resultPrice}}</strong><i class="fa fa-rub"></i></a></li>
             </ul>
@@ -26,18 +26,49 @@
             </div>
             <div id="navbar" class="navbar-collapse halfNav vv collapse">
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a ui-sref="dashboard.post({url:'about-us'})">Об издательстве</a></li>
                     <li><a ui-sref="dashboard.categories">Тематика</a></li>
-                    <li><a ui-sref="dashboard.catalog" ng-mouseover="ctrl.menuProduct = true;" ng-mouseleave="ctrl.menuProduct = false;">Продукция</a></li>
-                    <div ng-mouseover="ctrl.menuProduct = true;" ng-mouseleave="ctrl.menuProduct = false;" ng-show="ctrl.menuProduct" class="menuProduct_css">
+                    
+                    <li><a ui-sref="dashboard.catalog" ng-mouseover="ctrl.menuProduct = true;" ng-mouseleave="ctrl.menuProduct = false;">Книжная продукция</a></li>
+                    <div ng-mouseover="ctrl.menuProduct = true;" ng-mouseleave="ctrl.menuProduct = false;" ng-show="ctrl.menuProduct" class="menuProduct_css" style="margin-left: 200px;">
                         <ul>
-                            <li><a href="" ui-sref="dashboard.catalog_theme({theme: 1})">Электронные учебники</a></li>
-                            <li><a href="" ui-sref="dashboard.catalog_theme({theme: 2})">Книги ЮНИТИ</a></li>
-                            <li><a href="" ui-sref="dashboard.catalog({category: 1126})">Журналы</a></li>
+                            <li><a href="" ui-sref="dashboard.textbook({textbook:true})">Электронные учебники</a></li>
+                            <li><a href="" ui-sref="dashboard.book({book:true})">Книги ЮНИТИ</a></li>
+                            <li><a href="" ui-sref="dashboard.price">Прайс-листы</a></li>
+                            <li><a >Как заказать:</a>
+                                
+                                      <p><a href="" ui-sref="dashboard.post({url:'bibliotekam'})">— Библиотекам</a></p>
+                                      <p><a href="" ui-sref="dashboard.post({url:'individuals'})">— Физическим лицам</a></p>
+                                
+                            </li>
+                            
                         </ul>
                     </div>
 
-                    <li><a ui-sref="dashboard.post({url:'info'})">Информация</a></li>
-                    <li><a ui-sref="dashboard.post({url:'about-us'})">Об издательстве</a></li>
+                    <li><a href="" ui-sref="dashboard.journals">Журналы</a></li>
+
+                    <li><a href="" ui-sref="dashboard.post({url:'authors'})" ng-mouseover="ctrl.menuA = true;" ng-mouseleave="ctrl.menuA = false;">Авторам</a></li>
+                    <div ng-mouseover="ctrl.menuA = true;" ng-mouseleave="ctrl.menuA = false;" ng-show="ctrl.menuA" class="menuProduct_css" style="margin-left: 400px;">
+                        <ul>
+                            <li><a href="" ui-sref="dashboard.post({url:'izdat-uchebnik-monografiju'})">Издать учебник, монографию</a></li>
+                            <li><a href="" ui-sref="dashboard.post({url:'opublikovat-statju'})">Опубликовать статью</a></li>
+                            <li><a target="_blank" href="http://s3-eu-central-1.amazonaws.com/unitydana/app/public/ckeditor_assets/attachments/16/.doc" >Образец оформления статьи</a></li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <li><a ui-sref="dashboard.contacts" ng-mouseover="ctrl.menuContact = true;" ng-mouseleave="ctrl.menuContact = false;">Контакты</a></li>
+                    <div ng-mouseover="ctrl.menuContact = true;" ng-mouseleave="ctrl.menuContact = false;" ng-show="ctrl.menuContact" class="menuProduct_css" style="margin-left: 500px;">
+                        <ul>
+                            <li><a href="" ui-sref="dashboard.post({url:'team'})">Контакты </a></li>
+                            <li><a href="" ui-sref="dashboard.post({url:'map'})">Как нас найти</a></li>
+                            <li><a href="" ui-sref="dashboard.post({url:'requisits'})" >Реквизиты</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    
+
                     <li>
                         <form class="navbarForm" ng-submit="ctrl.search()">
                             <input type="text" ng-model="ctrl.query"  placeholder="Поиск"/>

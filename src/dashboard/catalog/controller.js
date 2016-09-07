@@ -11,7 +11,10 @@ export default class CatalogCtrl {
         this.sort = sort;
         this.category = category;
         this.categoryName = this.items.length ? this.items[0].category_name : '';
+        if (this.category == undefined) this.categoryName = '';
         this.state = $stateParams;
+
+        
     }
 
     loadMore() {

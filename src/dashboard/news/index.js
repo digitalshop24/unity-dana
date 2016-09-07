@@ -31,7 +31,11 @@ export default angular.module('dashboard.news', [])
 
                     category: $stateParams => {
                         return $stateParams.category;
-                    }
+                    },
+                    
+                    $title: ['news', function(news) {
+                        return news.name;
+                    }]
                 }
             });
     });

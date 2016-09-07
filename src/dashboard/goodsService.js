@@ -18,14 +18,28 @@ export default class GoodsService {
             return res.data;
         })
     }
-    getTheme(page, perPage, sort, desc, theme) {
+    getUnitiBook(page, perPage, sort, desc, book) {
         return this.api.get('/goods', {
             params: {
                 page: page,
                 per_page: perPage,
                 sort: sort,
                 desc: desc,
-                theme: theme
+                book: book
+            }
+        }).then((res) => {
+            return res.data;
+        })
+    }
+    getTextbook(page, perPage, sort, desc, textbook) {
+        console.log(page,' ', perPage,' ', sort, ' ', desc, ' ', textbook);
+        return this.api.get('/goods', {
+            params: {
+                page: page,
+                per_page: perPage,
+                sort: sort,
+                desc: desc,
+                textbook: textbook
             }
         }).then((res) => {
             console.log(res.data);
@@ -83,6 +97,34 @@ export default class GoodsService {
             return res.data;
         })
     }
+
+    getPrice() {
+        return this.api.get('/prices').then((res) => {
+            return res.data;
+        })
+    }
+
+    getJournals() {
+        return this.api.get('/themes').then((res) => {
+            return res.data;
+        })
+    }
+
+
+    getByIdJoornal(id) {
+        return this.api.get(`/themes/${id}`).then((res) => {
+            return res.data;
+        })
+    }
+
+    getByIdOther(id) {
+        return this.api.get(`/themes/${id}/journals`).then((res) => {
+            return res.data;
+        })
+    }
+
+    
+
 
     
 

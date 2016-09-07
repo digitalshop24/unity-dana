@@ -29,7 +29,10 @@ export default angular.module('dashboard.card', [
 
                     requisits: (cardService) => {
                         return cardService.getRequisits();
-                    }
+                    },
+
+                    $title: () => { return 'Корзина'; },
+                    
                 }
             });
     });

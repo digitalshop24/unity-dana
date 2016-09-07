@@ -15,7 +15,10 @@
             "bower_components/moment/min/moment.min.js",
             "bower_components/angular-moment/angular-moment.min.js",
             "bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js",
-            "src/resources/js/ya-map-2.1.min.js"
+            "bower_components/angular-ui-router-title/angular-ui-router-title.js",
+            "src/resources/js/ya-map-2.1.min.js",
+            "node_modules/angular-animate/angular-animate.min.js",
+            "node_modules/v-accordion/dist/v-accordion.min.js"
         ],
         "dest": "vendor.min.js"
     },
@@ -26,7 +29,8 @@
             "node_modules/font-awesome/css/font-awesome.min.css",
             "bower_components/slick-carousel/slick/slick.css",
             "bower_components/slick-carousel/slick/slick-theme.css",
-            "bower_components/nprogress/nprogress.css"
+            "bower_components/nprogress/nprogress.css",
+            "node_modules/v-accordion/dist/v-accordion.min.css"
         ],
         "dest": "vendor.min.css"
     },

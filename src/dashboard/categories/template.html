@@ -7,14 +7,17 @@
             </div>
         </div>
     </div>
-	<div class="row">
+	<div class="row" style="padding-top: 15px;">
         <div class="col-md-12">
-		     <ul class="category" ng-repeat="category in ctrl.categories" >
-	        	<a href=""><li class="title" ui-sref="dashboard.catalog({category: category.id})"> {{::category.name}} ({{::category.amount}})
+		     <ul class="category" ng-repeat="category in ctrl.categories | orderBy:'name'" >
+	        	
+                <li class="title" > 
+                    <a href="" ui-sref="dashboard.catalog({category: category.id})" class="gir">{{::category.name}} ({{::category.amount}})</a>
 	        		<ul ng-show="category.categories">
-	        			<a href=""><li ng-repeat="subCategory in category.categories" ui-sref="dashboard.catalog({category: subCategory.id})" ng-bind="subCategory.name"></li></a>
+	        			<a ui-sref="dashboard.catalog({category:subCategory.id})" href="" ng-repeat="subCategory in category.categories | orderBy:'name'"><li 
+                          ng-bind="subCategory.name"></li></a>
 	        		</ul>
-	        	</li></a>
+	        	</li>
 	        </ul>
         </div>
     </div>

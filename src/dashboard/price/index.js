@@ -15,13 +15,17 @@ export default angular.module('dashboard.price', [
                 controller: PriceCtrl,
                 controllerAs: 'ctrl',
                 resolve: {
+                    price: goodsService => {
+                        return goodsService.getPrice();
+                    },
+                    
                     newGoods: goodsService => {
                         return goodsService.getNewGoods();
                     },
+                    
+                    $title: () => { return 'Прайсы'; },
 
-                    price: priceService => {
-                        return priceService.getPrice();
-                    }
+                    
                 }
             });
     });

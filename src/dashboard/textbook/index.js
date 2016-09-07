@@ -1,17 +1,17 @@
 'use strict';
 
 import angular from 'angular';
-import CatalogCtrl from './controller.js';
-import CatalogService from './service.js';
+import CatalogTextbookCtrl from './controller.js';
+import CatalogTextbookService from './service.js';
 
-export default angular.module('dashboard.catalog', [])
-    .service('catalogService', CatalogService)
+export default angular.module('dashboard.textbook', [])
+    .service('catalogTextbookService', CatalogTextbookService)
     .config(function ($stateProvider) {
         $stateProvider
-            .state('dashboard.catalog', {
+            .state('dashboard.textbook', {
                 template: require('./template.html'),
-                url: '/catalog?category=',
-                controller: CatalogCtrl,
+                url: '/catalog_textbook?textbook=',
+                controller: CatalogTextbookCtrl,
                 controllerAs: 'ctrl',
                 params: {
                     page: 1,
@@ -21,7 +21,7 @@ export default angular.module('dashboard.catalog', [])
                 },
                 resolve: {
                     items: (goodsService, $stateParams) => {
-                        return goodsService.get($stateParams.page, $stateParams.perPage, $stateParams.sort, $stateParams.desc, $stateParams.category);
+                        return goodsService.getTextbook($stateParams.page, $stateParams.perPage, $stateParams.sort, $stateParams.desc, true);
                     },
 
                     page: $stateParams => {
@@ -34,10 +34,6 @@ export default angular.module('dashboard.catalog', [])
 
                     sort: $stateParams => {
                         return $stateParams.sort;
-                    },
-
-                    category: $stateParams => {
-                        return $stateParams.category;
                     },
 
                     desc: $stateParams => {

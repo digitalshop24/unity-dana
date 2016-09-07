@@ -6,7 +6,6 @@ export default class CategoriesService {
     }
 
     getCategories() {
-
         return this.api.get('/categories').then((res) => {
             return res.data;
         })

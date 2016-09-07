@@ -1,6 +1,6 @@
 'use strict';
 
-import angular from 'angular';
+import angular from 'angular'; 
 import MainCtrl from './controller.js';
 import MainService from './service.js';
 
@@ -21,7 +21,9 @@ export default angular.module('dashboard.main', [
 
                     newGoods: goodsService => {
                         return goodsService.getMainGoods();
-                    }
+                    },
+
+                    $title: () => { return 'Издательство'; },
                 }
             });
     });

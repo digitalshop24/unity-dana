@@ -99,11 +99,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="item in items.goods_ids">
-                        <td ng-bind="item.good_id">Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник. Гриф МО РФ. 
-                        </td>
-                        <td ng-bind="item.amount">99 шт.</td>
-                        <td>12000 р.</td>
+                    <tr ng-repeat="item in items.goods">
+                        <td ng-bind="item.name" style="width: 80%;"></td>
+                        <td ng-bind="item.amount +' шт'">99 шт.</td>
+                        <td ng-bind="item.price*item.amount + ' руб.'">12000 р.</td>
                     </tr>
                     </tbody>
                 </table>

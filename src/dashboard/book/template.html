@@ -3,7 +3,8 @@
         <div class="col-md-12">
             <div class="broad">
                 <a><span>Продукция</span></a> 
-                <!-- / <a><span ng-bind="::ctrl.categoryName"></span></a> -->
+                <span ng-show="ctrl.categoryName">/</span>
+                <a href="" ng-show="ctrl.categoryName"><span ng-bind="::ctrl.categoryName"></span></a>
             </div>
         </div>
     </div>

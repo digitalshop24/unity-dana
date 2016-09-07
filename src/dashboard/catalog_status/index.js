@@ -42,7 +42,9 @@ export default angular.module('dashboard.status', [])
 
                     desc: $stateParams => {
                         return $stateParams.desc;
-                    }
+                    },
+
+                    $title: () => { return 'Каталог'; },
                 }
             });
     });

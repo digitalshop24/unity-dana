@@ -11,7 +11,7 @@ export default class RecoverCtrl {
         this.newPass = '';
         this.newPassTwo = '';
     }
-
+ 
     sendPass() {
         this.auth.sendNewPass({
         	reset_password_token: this.token,
@@ -19,10 +19,11 @@ export default class RecoverCtrl {
             password_confirmation: this.newPassTwo
         })
             .then(() => {
-                this.handleSuccessAuth();
-                this.errorText = "Запрос на востановление пароля, отправлен"
+                this.state.go('dashboard.main');
+                this.errorText = "Вы успешно изменили пароль!"
             }).catch((err) => {
-                this.errorText = err.message || "Произошла ошибка, повторите!";
+                console.log(err)
+                this.errorText = err.ru || "Произошла ошибка, повторите!";
             });
     }
 }

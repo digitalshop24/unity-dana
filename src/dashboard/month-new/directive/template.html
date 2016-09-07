@@ -7,8 +7,8 @@
     </div>
 </div>
 <div class="container airBottom">
-    <div class="row">
-        <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in ctrl.monthNewGoods">
+    <div class="row" >
+        <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in ctrl.monthNewGoods | limitTo: 12" style="border-bottom: 1px solid #eee; padding-top: 30px; padding-bottom: 30px;">
             <figure class="newProduct">
                 <a ui-sref="dashboard.details({id: item.id})">
                     <div class="bgWrap">

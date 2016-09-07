@@ -16,10 +16,15 @@ export default angular.module('dashboard.details', [
                     item: (goodsService, $stateParams) => {
                         return goodsService.getById($stateParams.id);
                     },
-
                     newGoods: goodsService => {
                         return goodsService.getNewGoods();
-                    }
+                    },
+
+                    $title: ['item', function(item) {
+                        return item.name;
+                    }]
+
+
                 }
             });
     });

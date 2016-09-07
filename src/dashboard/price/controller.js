@@ -4,7 +4,8 @@
 export default class PriceCtrl {
     constructor(newGoods, price) {
         this.newGoods = newGoods;
-        this.price = price;
-        console.log(this.price);
+        this.price1 = price[0];
+        this.price2 = price[1];
+
     }
 }

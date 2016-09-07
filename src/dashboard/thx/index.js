@@ -13,6 +13,17 @@ export default angular.module('dashboard.thx', [
                 template: require('./template.html'),
                 url: '/thx',
                 controller: ThxCtrl,
-                controllerAs: 'ctrl'
+                controllerAs: 'ctrl',
+                resolve: {
+                    historyGoods: goodsService => {
+                        return goodsService.getHistoryGoods();
+                    },
+
+                    requisits: (cardService) => {
+                        return cardService.getRequisits();
+                    },
+
+                    $title: () => { return 'Спасибо!'; },
+                }
             });
     });

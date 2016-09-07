@@ -2,14 +2,14 @@
     <div class="row">
         <div class="col-md-12">
             <div class="broad">
-                <a><span>Продукция</span></a> /
+                <a><span>Продукция</span></a> 
                 <a ng-show="ctrl.item.supercategory_name" ui-sref="dashboard.catalog({category: ctrl.item.supercategory_id})">
                 <span ng-bind="::ctrl.item.supercategory_name"></span>
                 </a> 
-                <span ng-show="ctrl.item.supercategory_name">/</span>
+                
                 <a ui-sref="dashboard.catalog({category: ctrl.item.category_id})">
                 <span ng-bind="::ctrl.item.category_name"></span>
-                </a> <span ng-show="ctrl.item.category_name">/</span>
+                </a> /
                 <a><span ng-bind="::ctrl.item.name"></span></a>
             </div>
             <hr class="hrDet" />
@@ -19,7 +19,7 @@
         <div class="col-md-4">
            <a href="#"> <!-- MODAL HERE  -->
                 <div class="bgDetailImg"
-                     style="background-image: url('{{ctrl.item.image_url}}');">
+                    style="background-image: url('{{ctrl.item.image}}');">
                 </div>
             </a>
             <!-- <ul class="pdfParth text-center">
@@ -35,28 +35,12 @@
         </div>
         <div class="col-md-7">
             <p><strong ng-bind="::ctrl.item.name"></strong></p>
-
-            <p>Тема:  {{::ctrl.item.category_name}} <br>
-            <span>Авторы: </span><span ng-repeat="a in ctrl.item.authors" ng-bind="a.name"></span>
-            <br>
-             <span ng-show="ctrl.item.isbn">ISBN</span> {{::ctrl.item.isbn}} <br ng-show="ctrl.item.isbn">
-             <span ng-show="ctrl.item.cover">Вид переплета:</span> {{::ctrl.item.cover}} <br ng-show="ctrl.item.cover">
-             {{::ctrl.item.pages_amount}} стр., {{::ctrl.item.width}} <span ng-show="ctrl.item.length">x</span> {{::ctrl.item.length}} <span ng-show="ctrl.item.height ">x</span> {{::ctrl.item.height}}<br>
-             
-              </p>
-            <p ng-bind-html="ctrl.item.description"></p>
-            <br>
-            <p ng-bind-html="ctrl.item.content"></p>
-
-            <p class="price">
-                Цена: {{::ctrl.item.price}} руб.
-            </p>
-            <div buy-button item="ctrl.item"></div>
-
+            <p ng-bind-html="ctrl.item.text"></p>
+            
+            <!-- <p ng-bind-html="ctrl.item.content"></p> -->
         </div>
-
     </div>
-    <div class="row">
+    <div class="row" style="padding: 50px 0;">
         <div class="col-md-3" ng-show="ctrl.item.niion">
             <p>Классификатор NIION</p>
             <p ng-bind="ctrl.item.niion"></p>
@@ -74,6 +58,41 @@
             <p ng-bind="ctrl.item.profile"></p>
         </div>
     </div>
+    <div class="row">
+        
+<div class="col-sm-12 col-xs-12 col-md-12">
+        <v-accordion class="vAccordion--default" ng-repeat="r in ctrl.rubrics" >
+            <v-pane>
+                <v-pane-header >
+                  <div ng-bind="r.title" ></div>
+                </v-pane-header>
+                <v-pane-content >
+                    <div ng-bind-html="r.text">
+                    </div>
+                </v-pane-content>
+            </v-pane>
+        </v-accordion>
+    </div>
+ </div>   
+    <div class="row" style="margin-bottom: 150px;">
+        <div class="col-md-12">
+            <h2>Все выпуски</h2>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="i in ctrl.item_other" style="border-bottom: 1px solid rgb(238, 238, 238); padding-top: 30px; padding-bottom: 30px;">
+            <figure class="newProduct" style="height: 450px;">
+                <a  href="{{i.pdf}}" target="_blank">
+                    <div class="bgWrap " >
+                        <div class="bg"  style="background-image:url('{{i.image}}'); background-size: 100%; background-repeat: no-repeat; "></div>
+                    </div>
+                    <figcaption>
+                        <p style="height: auto;">{{::i.title }}</p>
+                        <p class="text-center"><strong>{{::i.priceamount}} руб.</strong></p>
+                    </figcaption>
+                </a>
+                <div buy-button item="item"></div>
+            </figure>
+        </div>
+    </div>
 </div>
 
-<div month-new-goods="ctrl.newGoods"></div>
+<!-- <div month-new-goods="ctrl.newGoods"></div> -->

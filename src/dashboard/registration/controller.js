@@ -30,7 +30,8 @@ export default class RegistrationCtrl {
             .then(() => {
                 this.handleSuccessRegistration();
             }).catch((err) => {
-                this.errorText = err.message || "Произошла ошибка регистрации";
+                console.log(err.error);
+                this.errorText = err.error || "Произошла ошибка регистрации";
             });
     }
 

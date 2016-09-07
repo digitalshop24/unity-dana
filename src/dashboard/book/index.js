@@ -1,17 +1,17 @@
 'use strict';
 
 import angular from 'angular';
-import CatalogThemeCtrl from './controller.js';
-import CatalogThemeService from './service.js';
+import CatalogBookCtrl from './controller.js';
+import CatalogBookService from './service.js';
 
-export default angular.module('dashboard.catalog_theme', [])
-    .service('catalogThemeService', CatalogThemeService)
+export default angular.module('dashboard.book', [])
+    .service('catalogBookService', CatalogBookService)
     .config(function ($stateProvider) {
         $stateProvider
-            .state('dashboard.catalog_theme', {
+            .state('dashboard.book', {
                 template: require('./template.html'),
-                url: '/catalog_theme?theme=',
-                controller: CatalogThemeCtrl,
+                url: '/catalog_uniti_book?book=',
+                controller: CatalogBookCtrl,
                 controllerAs: 'ctrl',
                 params: {
                     page: 1,
@@ -21,7 +21,7 @@ export default angular.module('dashboard.catalog_theme', [])
                 },
                 resolve: {
                     items: (goodsService, $stateParams) => {
-                        return goodsService.getTheme($stateParams.page, $stateParams.perPage, $stateParams.sort, $stateParams.desc, $stateParams.theme);
+                        return goodsService.getUnitiBook($stateParams.page, $stateParams.perPage, $stateParams.sort, $stateParams.desc, $stateParams.book);
                     },
 
                     page: $stateParams => {
@@ -36,13 +36,15 @@ export default angular.module('dashboard.catalog_theme', [])
                         return $stateParams.sort;
                     },
 
-                    theme: $stateParams => {
-                        return $stateParams.theme;
+                    book: $stateParams => {
+                        return $stateParams.book;
                     },
 
                     desc: $stateParams => {
                         return $stateParams.desc;
-                    }
+                    },
+
+                    $title: () => { return 'Каталог'; },
                 }
             });
     });

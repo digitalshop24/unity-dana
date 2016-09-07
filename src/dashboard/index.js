@@ -26,9 +26,12 @@ import bottomNavBar from './bottom-navbar/index.js';
 import headerScroll from './header/scroll.js';
 import Modal from './modal/index';
 import thx from './thx/index';
-import catalog_theme from './catalog_theme/index.js';
+import book from './book/index.js';
+import textbook from './textbook/index.js';
 import catalog_status from './catalog_status/index.js';
 import update from './update/index';
+import journals from './journals/index';
+import joornaldetails from './joornaldetails/index';
 
 
 
@@ -39,7 +42,6 @@ export default angular.module('dashboard',
         card.name,
         profile.name,
         catalog.name,
-        catalog_theme.name,
         price.name,
         recover.name,
         news.name,
@@ -53,7 +55,11 @@ export default angular.module('dashboard',
         buyButton.name,
         thx.name,
         catalog_status.name,
-        update.name
+        update.name,
+        book.name,
+        textbook.name,
+        journals.name,
+        joornaldetails.name
     ])
     .service('goodsService', GoodsService)
     .service('newsService', NewsService)

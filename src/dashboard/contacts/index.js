@@ -14,6 +14,7 @@ export default angular.module('dashboard.contacts', [])
                 controller: ContactsCtrl,
                 controllerAs: 'ctrl',
                 resolve: {
+                    $title: () => { return 'Контакты'; },
                 }
             });
     });

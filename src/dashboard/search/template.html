@@ -7,10 +7,13 @@
         <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in ctrl.items">
             <figure class="newProduct">
                 <a ui-sref="dashboard.details({id: item.id})">
-                    <div class="bgWrap" style="background-image: url('{{item.image_url}}');"></div>
+                    <div class="bgWrap" ng-class="{v2:item.type === 'v2'}">
+                        <div class="bg"  style="background-image:url('{{item.image_url}}'); {{item.textbook ? 'height: 150px;':'height: 200px;'}}; background-size: 100%; background-repeat: no-repeat; "></div>
+                    </div>
                     <figcaption class="search">
-                        <p ng-bind="::item.name">Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник.
-                            Гриф МО РФ. (Серия
+                        <!-- <p>{{item.type}}</p> -->
+                        <p ng-bind="::item.name | limitTo:50">Высшая математика для экономистов. 3-е изд., перераб. и доп. Учебник.
+                            Гриф МО РФ. (Серия 
                             "Золотой фонд российских учебников")</p>
 
                         <p class="text-center"><strong>{{::item.price}} руб.</strong></p>

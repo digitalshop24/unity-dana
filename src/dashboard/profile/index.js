@@ -15,7 +15,8 @@ export default angular.module('dashboard.profile', [
                 resolve: {
                     historyGoods: goodsService => {
                         return goodsService.getHistoryGoods();
-                    }
+                    },
+                     $title: () => { return 'Личный кабинет'; },
                 }
             });
     });
