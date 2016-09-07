@@ -1,4 +1,4 @@
-bower install (select moment any version (1 answer) , angular 1.4.1 <br /> 
+bower install (select moment (1 answer), and then angular 1.4.1 (2 answer) <br /> 
 npm install <br />
 sh start.sh <br />
 localhost:5555
