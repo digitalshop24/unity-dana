@@ -41,7 +41,7 @@
             <br>
              <span ng-show="ctrl.item.isbn">ISBN</span> {{::ctrl.item.isbn}} <br ng-show="ctrl.item.isbn">
              <span ng-show="ctrl.item.cover">Вид переплета:</span> {{::ctrl.item.cover}} <br ng-show="ctrl.item.cover">
-             {{::ctrl.item.pages_amount}} стр., {{::ctrl.item.width}} <span ng-show="ctrl.item.length">x</span> {{::ctrl.item.length}} <span ng-show="ctrl.item.height ">x</span> {{::ctrl.item.height}}<br>
+             <span ng-show="!ctrl.item.textbook">{{::ctrl.item.pages_amount}} стр.,</span> {{::ctrl.item.width}} <span ng-show="ctrl.item.length">x</span> {{::ctrl.item.length}} <span ng-show="ctrl.item.height ">x</span> {{::ctrl.item.height}}<br>
              
               </p>
             <p ng-bind-html="ctrl.item.description"></p>

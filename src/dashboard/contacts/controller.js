@@ -2,7 +2,11 @@
 
 
 export default class ContactsCtrl {
-    constructor(contactsService) {
+    constructor(contactsService, post, $sce) {
+        this.post = post[0];
+        this.sce = $sce;
+        this.body = this.sce.trustAsHtml(this.post.body);
+        console.log(this.body);
         this.name = "";
         this.phone = "";
         this.email = "";

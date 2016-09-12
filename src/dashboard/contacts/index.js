@@ -15,6 +15,10 @@ export default angular.module('dashboard.contacts', [])
                 controllerAs: 'ctrl',
                 resolve: {
                     $title: () => { return 'Контакты'; },
+
+                    post: (newsService,$stateParams) => {
+                        return newsService.get($stateParams.page, $stateParams.perPage, $stateParams.category, 'team');
+                    }
                 }
             });
     });

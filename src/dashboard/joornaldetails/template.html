@@ -19,7 +19,7 @@
         <div class="col-md-4">
            <a href="#"> <!-- MODAL HERE  -->
                 <div class="bgDetailImg"
-                    style="background-image: url('{{ctrl.item.image}}');">
+                    style="background-image: url('{{ctrl.item.image}}'); height: 370px; ">
                 </div>
             </a>
             <!-- <ul class="pdfParth text-center">
@@ -85,11 +85,11 @@
                         <div class="bg"  style="background-image:url('{{i.image}}'); background-size: 100%; background-repeat: no-repeat; "></div>
                     </div>
                     <figcaption>
-                        <p style="height: auto;">{{::i.title }}</p>
+                        <p style="min-height: 135px;">{{::i.title }}</p>
                         <p class="text-center"><strong>{{::i.priceamount}} руб.</strong></p>
                     </figcaption>
                 </a>
-                <div buy-button item="item"></div>
+                <div buy-button item="i"></div>
             </figure>
         </div>
     </div>

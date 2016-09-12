@@ -10,7 +10,6 @@ export default class HeaderCtrl {
         this.menuProduct = false;
         this.menuA = false;
         this.menuContact = false;
-        console.log(this.menuProduct, this.menu123, this.menuContact);
         this.api = api;
         this.categories = Object.assign(this.getCategories());
         this.c =  this.categories.$$state.value;
