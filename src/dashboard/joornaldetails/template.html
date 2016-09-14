@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="broad">
-                <a><span>Продукция</span></a> 
+                <a><span>Продукция</span></a>
                 <a ng-show="ctrl.item.supercategory_name" ui-sref="dashboard.catalog({category: ctrl.item.supercategory_id})">
                 <span ng-bind="::ctrl.item.supercategory_name"></span>
-                </a> 
-                
+                </a>
+
                 <a ui-sref="dashboard.catalog({category: ctrl.item.category_id})">
                 <span ng-bind="::ctrl.item.category_name"></span>
                 </a> /
@@ -36,7 +36,7 @@
         <div class="col-md-7">
             <p><strong ng-bind="::ctrl.item.name"></strong></p>
             <p ng-bind-html="ctrl.item.text"></p>
-            
+
             <!-- <p ng-bind-html="ctrl.item.content"></p> -->
         </div>
     </div>
@@ -59,7 +59,7 @@
         </div>
     </div>
     <div class="row">
-        
+
 <div class="col-sm-12 col-xs-12 col-md-12">
         <v-accordion class="vAccordion--default" ng-repeat="r in ctrl.rubrics" >
             <v-pane>
@@ -73,7 +73,7 @@
             </v-pane>
         </v-accordion>
     </div>
- </div>   
+ </div>
     <div class="row" style="margin-bottom: 150px;">
         <div class="col-md-12">
             <h2>Все выпуски</h2>
@@ -86,7 +86,7 @@
                     </div>
                     <figcaption>
                         <p style="min-height: 135px;">{{::i.title }}</p>
-                        <p class="text-center"><strong>{{::i.priceamount}} руб.</strong></p>
+                        <p class="text-center"><strong>{{::i.price}} руб.</strong></p>
                     </figcaption>
                 </a>
                 <div buy-button item="i"></div>
