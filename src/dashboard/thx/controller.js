@@ -7,7 +7,7 @@ export default class ThxCtrl {
     	this.email = this.session.user.email;
         this.phone = this.session.user.phone;
         this.requisits = requisits;
-        this.history = historyGoods[historyGoods.length-1];
+        this.history = historyGoods[historyGoods.length];
         this.requisits = requisits;
         this.req_content = this.sce.trustAsHtml(this.requisits.content);
     }

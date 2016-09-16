@@ -2,8 +2,9 @@
 
 
 export default class CardCtrl {
-    constructor(cardService, cardStorage, $sce, $rootScope, goods, requisits, modal, session, $state) {
-        this.cardService = cardService; 
+    constructor(auth, cardService, cardStorage, $sce, $rootScope, goods, requisits, modal, session, $state) {
+        this.auth = auth;
+        this.cardService = cardService;
         this.cardStorage = cardStorage;
         this.sce = $sce;
         console.log('123',goods);
@@ -44,10 +45,17 @@ export default class CardCtrl {
                 number: this.phone,
                 email: this.email,
                 legal: this.legal,
+                password: this.pass,
                 registration: this.registration
             }).then(res => {
                 this.afterOrder = true;
                 this.orderResponse = res;
+                //tut hochu chuvaka loginit, chtobi poluchat ego istorijy zakazov nizhe
+                console.log(res);
+                this.session.token = res.data.user.auth_token;
+                this.session.user = Object.assign(this.session.user, res.data.user);
+                this.session.isAuthenticated = true;
+                this.state.go(this.state.current, {}, {reload: true});
             });
             this.cardStorage.clear();
             this.state.go('dashboard.thx');
