@@ -48,17 +48,15 @@ export default class CardCtrl {
                 password: this.pass,
                 registration: this.registration
             }).then(res => {
-                console.log(res);
                 this.afterOrder = true;
                 this.orderResponse = res;
-                //tut hochu chuvaka loginit, chtobi poluchat ego istorijy zakazov nizhe
-                console.log(res);
                 this.session.token = res.user.auth_token;
                 this.session.user = Object.assign(this.session.user, res.user);
                 this.session.isAuthenticated = true;
+                this.cardStorage.clear();
+                this.state.go('dashboard.thx');
             });
-            this.cardStorage.clear();
-            this.state.go('dashboard.thx');
+
 
         }
     }
