@@ -46,7 +46,7 @@ export default class AuthService {
             throw response.data;
         });
     }
-    
+
 
     login(credentials) {
         return this.api.post('/users/sign_in', credentials).then(response => {
@@ -66,9 +66,11 @@ export default class AuthService {
     }
 
     initSession(response) {
+        console.log(response);
         this.session.token = response.data.user.auth_token;
         this.session.user = Object.assign(this.session.user, response.data.user);
         this.session.isAuthenticated = true;
+
     }
 
     isGuest(){
