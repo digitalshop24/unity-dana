@@ -4,6 +4,7 @@
 export default class CatalogCtrl {
     constructor(items, page, perPage, goodsService, sort, desc, category, $stateParams) {
         this.items = items;
+        console.log(this.items);
         this.page = page;
         this.perPage = perPage;
         this.goodsService = goodsService;

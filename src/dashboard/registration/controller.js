@@ -20,14 +20,13 @@ export default class RegistrationCtrl {
             return;
         }
 
-
         this.auth.register({
             email: this.form.email,
             password: this.form.password,
             repeat_password: this.form.password,
             legal: this.legal
         })
-            .then(() => {
+        .then(() => {
                 this.handleSuccessRegistration();
             }).catch((err) => {
                 console.log(err.error);
