@@ -5,7 +5,7 @@
                 <a><span>Корзина</span></a>
             </div>
         </div>
-    </div> 
+    </div>
     <div class="row cartWrap">
         <div class="col-md-12">
             <div class="row">
@@ -24,7 +24,7 @@
                                     <tr ng-repeat="item in ctrl.goods">
                                         <td ng-bind="::item.name"></td>
                                         <td ng-show="!ctrl.afterOrder"><spin item="item" callback="ctrl.callback()"/></td>
-                                        <td ng-bind="::item.price + ' р.'"></td>
+                                        <!-- <td ng-bind="::item.price + ' р.'"></td> -->
                                         <td  ng-show="!ctrl.afterOrder" ng-click="ctrl.removeItem(item)" >
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </td>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="inCartWrapper" ng-show="!ctrl.goods.length">
                             <h1>Корзина пуста</h1>
-                             <br/> 
+                             <br/>
                         </div>
 
                     </div>

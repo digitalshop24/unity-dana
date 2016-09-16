@@ -3,7 +3,7 @@
 
 export default class CardCtrl {
     constructor(cardService, cardStorage, $sce, $rootScope, goods, requisits, modal, session, $state) {
-        this.cardService = cardService; 
+        this.cardService = cardService;
         this.cardStorage = cardStorage;
         this.sce = $sce;
         cardStorage.goods = goods;
@@ -43,12 +43,14 @@ export default class CardCtrl {
                 number: this.phone,
                 email: this.email,
                 legal: this.legal,
+                password: this.pass,
                 registration: this.registration
             }).then(res => {
                 this.afterOrder = true;
                 this.orderResponse = res;
             });
             this.cardStorage.clear();
+            this.loginService.open();
             this.state.go('dashboard.thx');
 
         }

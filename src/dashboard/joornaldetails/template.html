@@ -18,7 +18,8 @@
     <div class="row">
         <div class="col-md-4">
            <a href="#"> <!-- MODAL HERE  -->
-                <div class="bgDetailImg"
+                <div ng-click="isFullScreen = !isFullScreen"
+     ng-class="{fullscreen: isFullScreen}" class="bgDetailImg"
                     style="background-image: url('{{ctrl.item.image}}'); height: 370px; ">
                 </div>
             </a>
