@@ -7,6 +7,7 @@ export default class CardCtrl {
         this.cardService = cardService;
         this.cardStorage = cardStorage;
         this.sce = $sce;
+        console.log('123',goods);
         cardStorage.goods = goods;
         this.goods = cardStorage.goods;
         this.modal = modal;

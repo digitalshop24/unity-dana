@@ -16,7 +16,7 @@ export default angular.module('dashboard.book', [])
                 params: {
                     page: 1,
                     perPage: 30,
-                    sort: 'price',
+                    sort: 'alphabet',
                     desc: false
                 },
                 resolve: {
