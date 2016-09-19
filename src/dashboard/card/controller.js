@@ -52,9 +52,6 @@ export default class CardCtrl {
                 this.orderResponse = res;
                 //tut hochu chuvaka loginit, chtobi poluchat ego istorijy zakazov nizhe
                 console.log(res);
-                this.session.token = res.data.user.auth_token;
-                this.session.user = Object.assign(this.session.user, res.data.user);
-                this.session.isAuthenticated = true;
                 this.state.go(this.state.current, {}, {reload: true});
             });
             this.cardStorage.clear();
