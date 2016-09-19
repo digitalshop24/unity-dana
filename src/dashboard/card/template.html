@@ -42,6 +42,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="regWrap">
+                            <p style="color:red;" ng-show="ctrl.errorText" ng-bind="ctrl.errorText"></p>
+                            <br>
                             <h3>Итого: {{ctrl.cardStorage.resultPrice}} <i class="fa fa-rub"></i> </h3>
 
                             <input type="email" ng-model="ctrl.email" placeholder="Эл. Почта" required/>
