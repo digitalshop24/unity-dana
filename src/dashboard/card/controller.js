@@ -21,7 +21,6 @@ export default class CardCtrl {
         this.req_content = this.sce.trustAsHtml(this.requisits.content);
         this.orderNumber = '';
         this.errorText = '';
-        
     }
 
     createOrder() {
