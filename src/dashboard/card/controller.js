@@ -19,6 +19,8 @@ export default class CardCtrl {
         this.state = $state;
         this.requisits = requisits;
         this.req_content = this.sce.trustAsHtml(this.requisits.content);
+        this.orderNumber = '';
+        this.error1 = '';
     }
 
     createOrder() {
@@ -49,11 +51,16 @@ export default class CardCtrl {
             }).then(res => {
                 this.afterOrder = true;
                 this.orderResponse = res;
-                this.session.token = res.user.auth_token;
-                this.session.user = Object.assign(this.session.user, res.user);
-                this.session.isAuthenticated = true;
+                // this.session.token = res.user.auth_token;
+                // this.session.user = Object.assign(this.session.user, res.user);
+                // this.session.isAuthenticated = true;
                 this.cardStorage.clear();
-                this.state.go('dashboard.thx');
+                this.goods = res.goods;
+                this.orderNumber = res.id;
+                // this.state.go('dashboard.thx');
+            }).catch((err) => {
+                console.log(err.error);
+                this.errorText = err.data.error || "Произошла ошибка регистрации";
             });
 
 

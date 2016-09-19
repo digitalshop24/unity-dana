@@ -5,9 +5,7 @@ export default class CardStorage {
         this.storage = $localStorage.$default({
             goods: []
         });
-        console.log('1',this.storage);
         this.goods = this.storage.goods;
-        console.log('1',this.goods);
         this.updateCounters();
     }
 

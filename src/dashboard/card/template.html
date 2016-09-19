@@ -14,7 +14,7 @@
                         <div class="inCartWrapper" ng-show="ctrl.goods.length">
                             <div ng-show="ctrl.afterOrder">
                                 <h2>Вы успешно оформили заказ.<br/> В ближайшее время мы с Вами свяжемся.</h2>
-                                <!-- <h3>Номер заказа: <span>3423 / 22</span></h3> -->
+                                <h3>Номер заказа: <span ng-bind="ctrl.orderNumber">3423 / 22</span></h3>
                                 <!-- <h3 ng-bind-html="ctrl.orderResponse"></h3> -->
                             </div>
 
@@ -42,6 +42,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="regWrap">
+                            <p style="color:red;" ng-show="ctrl.errorText" ng-bind="ctrl.errorText"></p>
+                            <br>
                             <h3>Итого: {{ctrl.cardStorage.resultPrice}} <i class="fa fa-rub"></i> </h3>
 
                             <input type="email" ng-model="ctrl.email" placeholder="Эл. Почта" required/>

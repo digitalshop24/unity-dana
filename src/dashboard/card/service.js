@@ -7,7 +7,6 @@ export default class CardService {
 
     createOrder(data) {
         return this.api.post('/orders', data).then((res) => {
-            console.log(res)
             return res.data;
         })
     }
