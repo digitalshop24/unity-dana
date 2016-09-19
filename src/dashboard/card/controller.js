@@ -20,7 +20,7 @@ export default class CardCtrl {
         this.requisits = requisits;
         this.req_content = this.sce.trustAsHtml(this.requisits.content);
         this.orderNumber = '';
-        this.error1 = '';
+        this.errorText = '';
     }
 
     createOrder() {
@@ -59,7 +59,6 @@ export default class CardCtrl {
                 this.orderNumber = res.id;
                 // this.state.go('dashboard.thx');
             }).catch((err) => {
-                console.log(err.error);
                 this.errorText = err.data.error || "Произошла ошибка регистрации";
             });
 

@@ -20,9 +20,9 @@ export default angular.module('dashboard.main', [
                     },
 
                     newGoods: goodsService => {
-                        return goodsService.getMainGoods();
+                        return goodsService.getNewGoods();
                     },
-
+                    
                     $title: () => { return 'Издательство'; },
                 }
             });
