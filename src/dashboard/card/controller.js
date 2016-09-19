@@ -2,12 +2,11 @@
 
 
 export default class CardCtrl {
-    constructor(auth, cardService, cardStorage, $sce, $rootScope, goods, requisits, modal, session, $state) {
+    constructor(orderNumber, auth, cardService, cardStorage, $sce, $rootScope, goods, requisits, modal, session, $state) {
         this.auth = auth;
         this.cardService = cardService;
         this.cardStorage = cardStorage;
         this.sce = $sce;
-        console.log('123',goods);
         cardStorage.goods = goods;
         this.goods = cardStorage.goods;
         this.modal = modal;
@@ -20,6 +19,7 @@ export default class CardCtrl {
         this.state = $state;
         this.requisits = requisits;
         this.req_content = this.sce.trustAsHtml(this.requisits.content);
+        this.orderNumber = orderNumber;
     }
 
     createOrder() {
