@@ -7,7 +7,6 @@ export default class CardCtrl {
         this.cardService = cardService;
         this.cardStorage = cardStorage;
         this.sce = $sce;
-        console.log('123',goods);
         cardStorage.goods = goods;
         this.goods = cardStorage.goods;
         this.modal = modal;
@@ -20,6 +19,8 @@ export default class CardCtrl {
         this.state = $state;
         this.requisits = requisits;
         this.req_content = this.sce.trustAsHtml(this.requisits.content);
+        this.orderNumber = '';
+        
     }
 
     createOrder() {
@@ -50,12 +51,16 @@ export default class CardCtrl {
             }).then(res => {
                 this.afterOrder = true;
                 this.orderResponse = res;
-                //tut hochu chuvaka loginit, chtobi poluchat ego istorijy zakazov nizhe
-                console.log(res);
-                this.state.go(this.state.current, {}, {reload: true});
+                // this.session.token = res.user.auth_token;
+                // this.session.user = Object.assign(this.session.user, res.user);
+                // this.session.isAuthenticated = true;
+                this.cardStorage.clear();
+                this.goods = res.goods;
+                this.orderNumber = res.id;
+                // this.state.go('dashboard.thx');
+
             });
-            this.cardStorage.clear();
-            this.state.go('dashboard.thx');
+
 
         }
     }

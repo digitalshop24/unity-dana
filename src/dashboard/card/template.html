@@ -14,7 +14,7 @@
                         <div class="inCartWrapper" ng-show="ctrl.goods.length">
                             <div ng-show="ctrl.afterOrder">
                                 <h2>Вы успешно оформили заказ.<br/> В ближайшее время мы с Вами свяжемся.</h2>
-                                <!-- <h3>Номер заказа: <span>3423 / 22</span></h3> -->
+                                <h3>Номер заказа: <span ng-bind="ctrl.orderNumber">3423 / 22</span></h3>
                                 <!-- <h3 ng-bind-html="ctrl.orderResponse"></h3> -->
                             </div>
 
