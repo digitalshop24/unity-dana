@@ -13,7 +13,7 @@ export default class CardCtrl {
         this.session = session;
         this.email = this.session.user.email;
         this.phone = this.session.user.phone;
-        this.registration = !this.session.isAuthenticated;
+        this.registration = this.session.isAuthenticated;
         this.legal = false;
         this.afterOrder = false;
         this.state = $state;
