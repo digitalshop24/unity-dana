@@ -4,7 +4,6 @@
 export default class CatalogCtrl {
     constructor(items, page, perPage, goodsService, sort, desc, category, $stateParams) {
         this.items = items;
-        console.log(this.items);
         this.page = page;
         this.perPage = perPage;
         this.goodsService = goodsService;
@@ -33,7 +32,17 @@ export default class CatalogCtrl {
             this.items = res;
         });
     }
-
- 
-
+    edit_name(name) {
+        var name_end = '';
+        if (name.length > 60) {
+           var name_mass = name.split(' '); 
+           for(var i = 0; i < name_mass.length; i++) {
+                if (name_end.length < 60 ) {
+                    name_end = name_end +' '+name_mass[i];
+                }
+                else return name_end;   
+            }   
+        }    
+        else return name;     
+    }
 }

@@ -31,7 +31,7 @@
                         style="background-image:url('{{item.image_url}}'); {{item.textbook ? 'height: 131px;':'height: 197px;'}}; background-size: 100%; background-repeat: no-repeat; "></div>
                     </div>
                     <figcaption>
-                       <p>{{::item.name | limitTo:50}}</p>
+                       <p>{{ctrl.edit_name(item.name)}}</p>
 
                         <p class="text-center"><strong>{{::item.price}} руб.</strong></p>
                     </figcaption>
