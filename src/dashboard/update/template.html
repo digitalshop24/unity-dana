@@ -1,5 +1,5 @@
 <div class="contentWraper container cataloguePage detail">
-    <div class="row text-center pricePg">
+    <div class="row text-center pricePg" ng-show="ctrl.isAuthenticated && ctrl.role">
         <div class="col-md-12 " >
         	<p ng-bind="ctrl.text"></p>
         	<div style="height:100px;"></div>
@@ -8,5 +8,11 @@
             <div style="height:200px;"></div>
         </div>
     </div>
+    <div class="row text-center pricePg" ng-show="!ctrl.isAuthenticated && !ctrl.role">
+        <div class="col-md-12 " style="height:70vh;">
+        	<p>Страница не доступна</p>
+        </div>
+    </div>
 </div>
+
 
