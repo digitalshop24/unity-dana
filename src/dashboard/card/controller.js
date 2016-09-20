@@ -49,6 +49,7 @@ export default class CardCtrl {
                 password: this.pass,
                 registration: this.registration
             }).then(res => {
+                this.errorText ='';
                 this.afterOrder = true;
                 this.orderResponse = res;
                 // this.session.token = res.user.auth_token;
