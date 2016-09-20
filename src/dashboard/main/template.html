@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-12 main">
             <div class="bookCarousel">
-                <slick slides-to-show="7" autoplay="true" center-padding="60px" arrows="true" swipe="false">
+                <slick slides-to-show="7" autoplay="true" center-padding="60px" arrows="true" swipe="false" infinite = "false">
                     <div class="item" ng-click="$state.go('dashboard.details', {id: hit.id})" style="background-image:url('{{hit.image_url}}');" ng-repeat="hit in ctrl.hits"></div>
                 </slick>
 

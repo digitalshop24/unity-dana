@@ -10,17 +10,14 @@ export default class AuthService {
         this.$rootScope = $rootScope;
 
     }
-
     register(credentials) {
         return this.api.post('/users', credentials).then(response => {
-            // console.log('response', response);
             this.initSession(response);
             return this.session;
         }).catch(response => {
             throw response.data;
         });
     }
-
     editPassword(credentials) {
         return this.api.put('/users/password/change', credentials).then(response => {
             this.initSession(response);
@@ -66,7 +63,7 @@ export default class AuthService {
     }
 
     initSession(response) {
-        console.log(response);
+        console.log('qwerqwer', response);
         this.session.token = response.data.user.auth_token;
         this.session.user = Object.assign(this.session.user, response.data.user);
         this.session.isAuthenticated = true;
