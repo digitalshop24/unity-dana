@@ -7,7 +7,6 @@ export default class UpdateService {
 
     updateSetting() {
         return this.api.get('/settings/parse').then((res) => {
-        	console.log(res.data);
             return res.data;
         })
     }
