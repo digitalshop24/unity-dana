@@ -16,10 +16,9 @@ export default class UpdateCtrl {
     }
 
     update() {
-        this.text = 'Ожидайте';
+        this.text = 'Ожидайте...';
         this.auth.updateSetting()
             .then(() => {
-                console.log('12341234');
                 this.text = 'Обновлено успешно';
             }).catch((err) => {  
                 this.text = 'Ошибка обновления';
@@ -27,7 +26,7 @@ export default class UpdateCtrl {
     }
     
     send() {
-        this.text = 'Ожидайте';
+        this.text = 'Ожидайте...';
         this.auth.sendPrice()
             .then(() => {
                 this.text = 'Отправлено успешно';
