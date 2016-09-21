@@ -15,7 +15,6 @@ export default angular.module('dashboard.update', [
                 controller: UpdateCtrl,
                 controllerAs: 'ctrl',
                 resolve: {
-                    
                 }
             });
     });

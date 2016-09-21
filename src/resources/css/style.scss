@@ -71,7 +71,7 @@ ul li {
 }
 .contentWraper {
   margin-top: 160px;
- 
+
 }
 
 /* NAVIGATION STYLES */
@@ -106,7 +106,7 @@ nav {
     margin-left:0 !important;
     display: flex;
     max-width:0px;
-    
+
     img {
       height: 50px;
     }
@@ -282,7 +282,7 @@ nav {
         -moz-box-shadow: 0px 0px 0px 2px rgba(0,0,0,1);
         box-shadow: 0px 0px 0px 2px rgba(0,0,0,1);
       }
-      
+
     }
     .mainBtn {
       background-color: $gold;
@@ -424,7 +424,7 @@ footer {
   min-height: 32vh;
   .mainBtn {
     margin-top: 50px;
-  } 
+  }
 }
 
 .broad {
@@ -433,12 +433,12 @@ footer {
   span {
     margin: 0 0 10px;
   }
-} 
+}
 // CATALOGUE PAGE CATALOGUE PAGE CATALOGUE PAGE CATALOGUE PAGE
 // CATALOGUE PAGE CATALOGUE PAGE CATALOGUE PAGE CATALOGUE PAGE
 
 .cataloguePage {
-  
+
   .mixing {
     text-align: right;
     ul, p {
@@ -550,7 +550,7 @@ footer {
         .panel-body {
           border:0;
           padding: 0 15px;
-          
+
         }
       }
       .panel-body {
@@ -738,7 +738,7 @@ footer {
     }
     .accord {
       article {
-        
+
         position: absolute;
         opacity:0;
         z-index: -4;
@@ -787,7 +787,7 @@ footer {
   .wrapperLk {
     display: flex;
     padding:40px;
-    margin: 20px 0 40px; 
+    margin: 20px 0 40px;
     background-color:#FAFAFA;
     border-radius:20px;
     .right {
@@ -817,7 +817,7 @@ footer {
         border:0;
         border-bottom:1px solid $gold;
         margin-top:10px;
-        
+
       }
       .grayBtn {
         margin: 30px 0 0;
@@ -908,7 +908,7 @@ footer {
   outline:none;
 }
 
-// MODAL STYLES 
+// MODAL STYLES
 .closeMod {
   position: absolute;
   z-index: 33;
@@ -1062,7 +1062,7 @@ footer {
 }
 
 @media only screen and (min-width: 1450px) {
-  
+
 }
 
 

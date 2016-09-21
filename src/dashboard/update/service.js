@@ -10,4 +10,5 @@ export default class UpdateService {
             return res.data;
         })
     }
+
 }

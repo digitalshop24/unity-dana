@@ -5,7 +5,7 @@
                 <a><span>Продукция</span></a> /
                 <a ng-show="ctrl.item.supercategory_name" ui-sref="dashboard.catalog({category: ctrl.item.supercategory_id})">
                 <span ng-bind="::ctrl.item.supercategory_name"></span>
-                </a> 
+                </a>
                 <span ng-show="ctrl.item.supercategory_name">/</span>
                 <a ui-sref="dashboard.catalog({category: ctrl.item.category_id})">
                 <span ng-bind="::ctrl.item.category_name"></span>
@@ -41,8 +41,8 @@
             <br>
              <span ng-show="ctrl.item.isbn">ISBN</span> {{::ctrl.item.isbn}} <br ng-show="ctrl.item.isbn">
              <span ng-show="ctrl.item.cover">Вид переплета:</span> {{::ctrl.item.cover}} <br ng-show="ctrl.item.cover">
-             <span ng-show="!ctrl.item.textbook">{{::ctrl.item.pages_amount}} стр.,</span> {{::ctrl.item.width}} <span ng-show="ctrl.item.length">x</span> {{::ctrl.item.length}} <span ng-show="ctrl.item.height ">x</span> {{::ctrl.item.height}}<br>
-             
+             <span ng-show="!ctrl.item.textbook">{{::ctrl.item.pages_amount}} стр.
+
               </p>
             <p ng-bind-html="ctrl.item.description"></p>
             <br>

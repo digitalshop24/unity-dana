@@ -92,5 +92,10 @@ export default class AuthService {
             return res.data;
         })
     }
+    getDate() {
+        return this.api.get('/settings/upddate').then((res) => {
+            return res.data;
+        })
+    }
 }
 
