@@ -14,9 +14,12 @@ export default class UpdateCtrl {
         }
         else this.role = false;
 
+
     }
 
-    date(){
+
+
+    showDate(){
         this.auth.getDate()
             .then(res=> {
                 this.date = res;
@@ -24,6 +27,8 @@ export default class UpdateCtrl {
                 this.text = 'Ошибка обновления';
             });
     }
+
+
 
     update() {
         this.text = 'Ожидайте...';
