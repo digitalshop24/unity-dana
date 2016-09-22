@@ -1,19 +1,18 @@
-<script>
-$(document).ready ( function(){
-   alert('ok');
-});​}
-</script>
 <div class="contentWraper container cataloguePage detail">
     <div class="row text-center pricePg" ng-show="ctrl.isAuthenticated && ctrl.role">
         <div class="col-md-12" >
-        	<p ng-bind="ctrl.text"></p>
-            <p ng-bind="ctrl.date"></p>
-        	<div style="height:100px;"></div>
-            <div ng-show="ctrl.text != 'Ожидайте...'">
-
-                <button class="grayBtn" ng-click="ctrl.update()">Обновить данные</button>
-                <button class="grayBtn" ng-click="ctrl.send()">Рассылка</button>
+        	<!-- <p ng-bind="ctrl.text"></p> -->
+            <div ng-show="ctrl.date != '0'">
+                <p ng-bind="ctrl.date"></p>
             </div>
+            <div ng-show="ctrl.date == '0'">
+                <p>Идет обновление</p>
+            </div>
+        	<div style="height:100px;"></div>
+            <div ng-show="ctrl.date != '0'">
+                <button class="grayBtn" ng-click="ctrl.update()">Обновить данные</button>
+            </div>
+            <button class="grayBtn" ng-click="ctrl.send()">Рассылка</button>
             <div style="height:200px;"></div>
         </div>
     </div>

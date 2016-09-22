@@ -2,19 +2,18 @@
 
 
 export default class UpdateCtrl {
-    constructor(auth, session) {
+    constructor(auth, session, $interval) {
     	this.auth = auth;
         this.text = '';
         this.date ='';
         this.session = session;
-        console.log(this.session.user);
+        //console.log(this.session.user);
         this.isAuthenticated = this.session.isAuthenticated;
         if (this.session.user.email == 'superadmin@unitydana.com') {
             this.role = true;
         }
         else this.role = false;
-
-
+        $interval(() => this.showDate(), 500)
     }
 
 
